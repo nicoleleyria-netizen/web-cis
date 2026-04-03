@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import "./globals.css"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 const inter = Inter({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
@@ -81,7 +83,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.className} font-sans antialiased`}>
         <Script id="asystir-jquery" src="https://code.jquery.com/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        <Script id="asystir-config" src="/asystir_conf11aa.js" strategy="afterInteractive" />
+        <Script id="asystir-config" src={`${basePath}/asystir_conf11aa.js`} strategy="afterInteractive" />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

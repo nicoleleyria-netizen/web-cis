@@ -1,10 +1,20 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.GITHUB_PAGES === 'true'
+
 const nextConfig = {
+  ...(isGithubPages
+    ? {
+        output: 'export',
+        basePath: '/web-cis',
+        assetPrefix: '/web-cis',
+        trailingSlash: true,
+      }
+    : {}),
   typescript: {
     ignoreBuildErrors: false,
   },
   images: {
-    unoptimized: false,
+    unoptimized: isGithubPages,
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
   },
