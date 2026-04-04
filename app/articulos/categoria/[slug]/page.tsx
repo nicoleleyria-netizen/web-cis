@@ -131,6 +131,21 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   }
 }
 
+export async function generateStaticParams() {
+  try {
+    const categories = await getAllCategories()
+    const slugs = categories.map((category) => category.slug).filter(Boolean)
+
+    if (slugs.length > 0) {
+      return slugs.map((slug) => ({ slug }))
+    }
+  } catch {
+    // Fall back to local mock data when CMS data is unavailable
+  }
+
+  return Object.keys(mockCategories).map((slug) => ({ slug }))
+}
+
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params
 

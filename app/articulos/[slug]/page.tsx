@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
-import { getPostBySlug, getRelatedPosts } from "@/sanity/lib/fetch"
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/sanity/lib/fetch"
 import { urlForImage } from "@/sanity/lib/image"
 import { PortableTextContent } from "@/components/portable-text"
 import { PostCard } from "@/components/post-card"
@@ -163,6 +163,21 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       description: mockPost.excerpt,
     }
   }
+}
+
+export async function generateStaticParams() {
+  try {
+    const { posts } = await getAllPosts(1, 200)
+    const slugs = posts.map((post) => post.slug).filter(Boolean)
+
+    if (slugs.length > 0) {
+      return slugs.map((slug) => ({ slug }))
+    }
+  } catch {
+    // Fall back to local mock data when CMS data is unavailable
+  }
+
+  return [{ slug: mockPost.slug }]
 }
 
 export default async function PostPage({ params }: PostPageProps) {
