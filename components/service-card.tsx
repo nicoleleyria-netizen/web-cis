@@ -1,6 +1,6 @@
 import type React from "react"
 import Link from "next/link"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 

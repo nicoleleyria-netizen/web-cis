@@ -1,7 +1,7 @@
 import type React from "react"
 import { PortableText as BasePortableText } from "@portabletext/react"
 import type { PortableTextBlock } from "@portabletext/types"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import Link from "next/link"
 import { urlForImage } from "@/sanity/lib/image"
 

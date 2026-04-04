@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 

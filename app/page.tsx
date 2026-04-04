@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { Stethoscope, Briefcase, Activity, ArrowRight, MapPin, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ServiceCard } from "@/components/service-card"

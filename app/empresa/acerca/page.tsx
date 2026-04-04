@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {

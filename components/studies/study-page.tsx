@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { StudyTurnoForm } from "@/components/studies/study-turno-form"
 import { CTASection } from "@/components/cta-section"
 import { MoreServicesButton } from "@/components/studies/more-services-button"

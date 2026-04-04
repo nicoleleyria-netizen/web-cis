@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { CheckCircle, Award, Heart, TrendingUp, Shield } from "lucide-react"
 import { CTASection } from "@/components/cta-section"
 import { SectionHeader } from "@/components/section-header"

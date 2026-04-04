@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { Microscope, FileSearch, Users, ShieldCheck, HeartPulse, GraduationCap } from "lucide-react"
 import { CTASection } from "@/components/cta-section"
 import { SectionHeader } from "@/components/section-header"

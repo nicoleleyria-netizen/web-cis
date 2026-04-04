@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
+import Image from "@/components/base-path-image"
 import { Users, Heart, TrendingUp, Award } from "lucide-react"
 import { JobApplicationForm } from "@/components/job-application-form"
 import { CTASection } from "@/components/cta-section"
