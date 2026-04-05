@@ -1,19 +1,20 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "@/components/base-path-image"
-import { CheckCircle, Award, Heart, TrendingUp, Shield } from "lucide-react"
+import { Activity, ChevronRight, ShieldCheck, Stethoscope } from "lucide-react"
 import { CTASection } from "@/components/cta-section"
 import { SectionHeader } from "@/components/section-header"
 import { StudyTurnoForm } from "@/components/studies/study-turno-form"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Medicina del Deporte - EMMAC y Aptitud Física Deportiva",
+  title: "Medicina del Deporte - EMMAC, aptitud y cobertura deportiva",
   description:
-    "Exámenes médicos deportivos EMMAC, certificados de aptitud física, evaluación de rendimiento y prevención de lesiones para deportistas en Córdoba. Consultora CIS.",
+    "Atención médica para deportistas y servicios de cobertura para clubes e instituciones en Córdoba.",
   openGraph: {
     title: "Medicina del Deporte - Consultora CIS",
     description:
-      "EMMAC, apto físico deportivo, evaluación de rendimiento y prevención de lesiones para deportistas de todos los niveles.",
+      "EMMAC, apto médico deportivo y coberturas de salud para clubes e instituciones.",
     images: ["/images/medicina-del-deporte/hero.png"],
   },
   alternates: {
@@ -23,39 +24,85 @@ export const metadata: Metadata = {
 
 const servicios = [
   {
-    icon: <Award className="h-6 w-6" />,
+    icon: <Stethoscope className="h-6 w-6" />,
+    title: "Atención Médica Especialistas",
+    href: "#atencion-medica-especialistas",
+    description: "Especialidades médicas vinculadas a la práctica deportiva.",
+    accordion: true,
+  },
+  {
+    icon: <Activity className="h-6 w-6" />,
+    title: "Exámenes Complementarios",
+    href: "#examenes-complementarios-mdd",
+    description: "Estudios diagnósticos deportivos en un mismo circuito de atención.",
+    accordion: true,
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Fichaje de Rugby (UAR)",
+    href: "/medicina-del-deporte/fichaje-rugby-uar",
+    description: "Servicio unificado EMMAC + ficha UAR para habilitación anual.",
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Aptitud Médica para ingresos a IPEF y otros terciarios",
+    description: "Aptitud médica para ingresos con evaluación integral y certificación.",
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
     title: "EMMAC",
     href: "/medicina-del-deporte/emmac",
     description:
-      "Examen Médico de Mediana y Alta Competencia. La evaluación más completa para deportistas de alto rendimiento.",
+      "Examen Médico de Mediana y Alta Competencia, obligatorio según normativa provincial.",
   },
   {
-    icon: <Heart className="h-6 w-6" />,
-    title: "Apto Físico Deportivo",
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Aptos Médicos Deportivos",
     href: "/medicina-del-deporte/apto-medico-deportivo",
-    description: "Certificados de aptitud física para práctica deportiva amateur y federada.",
-  },
-  {
-    icon: <TrendingUp className="h-6 w-6" />,
-    title: "Evaluación de Rendimiento",
-    href: "/medicina-del-deporte/evaluacion-rendimiento",
-    description: "Análisis integral del estado físico y capacidad de rendimiento deportivo.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Prevención de Lesiones",
-    href: "/medicina-del-deporte/prevencion-lesiones",
-    description: "Evaluación de riesgos y recomendaciones para prevenir lesiones deportivas.",
+    description: "Chequeo preventivo y certificado válido para clubes e instituciones deportivas.",
   },
 ]
 
-const beneficios = [
-  "Detección temprana de condiciones cardíacas",
-  "Evaluación musculoesquelética completa",
-  "Recomendaciones personalizadas de entrenamiento",
-  "Asesoramiento nutricional básico",
-  "Seguimiento periódico de evolución",
-  "Certificación reconocida nacionalmente",
+const coberturas = [
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Cobertura de Salud para Deportistas",
+    href: "/medicina-del-deporte/cobertura-salud-deportistas",
+    description: "Planes y seguros de salud para planteles deportivos de clubes e instituciones.",
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Cobertura Médica y Paramédica en Clubes e Instituciones",
+    href: "/medicina-del-deporte/cobertura-medica-paramedica-clubes-instituciones",
+    description: "Equipos médicos y paramédicos para eventos, entrenamientos y temporadas.",
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Cobertura Médica en Piletas",
+    href: "/medicina-del-deporte/cobertura-medica-paramedica-clubes-instituciones",
+    description: "Deriva a la cobertura médica y paramédica para clubes, instituciones y temporada de piletas.",
+  },
+]
+
+const especialistas = [
+  "Medicina general",
+  "Clínica médica",
+  "Traumatología",
+  "Cardiología",
+  "Oftalmología",
+  "Kinesiología",
+  "Nutrición",
+]
+
+const examenesComplementarios = [
+  "Radiología digitalizada",
+  "Ergometría",
+  "MAPA",
+  "HOLTER",
+  "Electrocardiografía",
+  "Espirometría",
+  "Electroencefalografía",
+  "Audiometría",
 ]
 
 export default function MedicinaDelDeportePage() {
@@ -150,7 +197,7 @@ export default function MedicinaDelDeportePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Nuestros Servicios"
-            description="Ofrecemos evaluaciones completas adaptadas a cada tipo de deportista y actividad."
+            description="Servicios médicos para deportistas y habilitaciones deportivas, con atención ordenada y resolutiva."
           />
           <div className="grid gap-6 md:grid-cols-2">
             {servicios.map((servicio) => {
@@ -160,13 +207,26 @@ export default function MedicinaDelDeportePage() {
                     {servicio.icon}
                   </div>
                   <div>
-                    <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                    <h3 className="mb-2 flex items-center gap-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
                       {servicio.title}
+                      {servicio.href && <ChevronRight className="h-4 w-4 text-primary/70" />}
                     </h3>
                     <p className="text-muted-foreground">{servicio.description}</p>
                   </div>
                 </>
               )
+
+              if ((servicio as { accordion?: boolean }).accordion && servicio.href) {
+                return (
+                  <a
+                    key={servicio.title}
+                    href={servicio.href}
+                    className="group flex gap-4 rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:bg-primary/5 hover:shadow-md cursor-pointer"
+                  >
+                    {cardContent}
+                  </a>
+                )
+              }
 
               if (servicio.href) {
                 return (
@@ -190,31 +250,77 @@ export default function MedicinaDelDeportePage() {
         </div>
       </section>
 
-      {/* Beneficios */}
+      <section id="atencion-medica-especialistas" className="bg-secondary py-16 lg:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
+            <h2 className="text-3xl font-bold text-foreground">Atención Médica Especialistas</h2>
+            <p className="mt-3 text-muted-foreground">Desplegá las especialidades vinculadas a medicina del deporte.</p>
+            <Accordion type="multiple" className="mt-6">
+              <AccordionItem value="especialistas-mdd">
+                <AccordionTrigger>Ver especialidades</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {especialistas.map((item) => (
+                      <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section id="examenes-complementarios-mdd" className="py-16 lg:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
+            <h2 className="text-3xl font-bold text-foreground">Exámenes Complementarios</h2>
+            <p className="mt-3 text-muted-foreground">Estudios diagnósticos disponibles en el circuito de medicina del deporte.</p>
+            <Accordion type="multiple" className="mt-6">
+              <AccordionItem value="examenes-mdd">
+                <AccordionTrigger>Ver opciones disponibles</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {examenesComplementarios.map((item) => (
+                      <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-secondary py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative aspect-video overflow-hidden rounded-xl">
-              <Image
-                src="/images/medicina-del-deporte/atencion-medica-mdd.jpg"
-                alt="Atleta entrenando con seguimiento de rendimiento y salud deportiva"
-                fill
-                className="object-cover"
-                loading="lazy"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
-              <h2 className="mb-6 text-3xl font-bold text-foreground">Beneficios de la Evaluación</h2>
-              <ul className="space-y-3">
-                {beneficios.map((beneficio) => (
-                  <li key={beneficio} className="flex items-start gap-3">
-                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
-                    <span className="text-muted-foreground">{beneficio}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <SectionHeader
+            title="Cobertura de Salud para Deportistas"
+            description="Segunda parte: servicios de cobertura y gestión médica para clubes, instituciones y eventos deportivos."
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {coberturas.map((servicio) => (
+              <Link
+                key={servicio.title}
+                href={servicio.href}
+                className="group flex gap-4 rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:bg-primary/5 hover:shadow-md cursor-pointer"
+              >
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-primary/15 group-hover:text-primary">
+                  {servicio.icon}
+                </div>
+                <div>
+                  <h3 className="mb-2 flex items-center gap-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                    {servicio.title}
+                    <ChevronRight className="h-4 w-4 text-primary/70" />
+                  </h3>
+                  <p className="text-muted-foreground">{servicio.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -226,9 +332,11 @@ export default function MedicinaDelDeportePage() {
       </section>
 
       <CTASection
-        title="¿Eres deportista?"
-        description="Agenda tu evaluación y asegura tu rendimiento de manera segura."
-        primaryCTA={{ text: "Solicitar turno", href: "/contacto" }}
+        title="¿Necesitás habilitar tu práctica o cobertura deportiva?"
+        description="Podés coordinar por turno online, WhatsApp o formulario de contacto."
+        primaryCTA={{ text: "Turno online", href: "/turnos-online" }}
+        secondaryCTA={{ text: "Formulario de contacto", href: "/contacto" }}
+        whatsappCTA
       />
     </>
   )

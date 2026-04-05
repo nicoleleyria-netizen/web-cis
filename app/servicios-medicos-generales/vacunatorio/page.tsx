@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Vacunatorio"
       summary="Servicio de vacunación integral para empresas, instituciones y personas, con control y seguimiento profesional."
-      heroImage="/images/sis-real/medicina-laboral-real.jpg"
+      heroImage="/images/servicios-medicos-generales/vacunatorio-smg.jfif"
       heroAlt="Vacunatorio"
       intro={[
         "En Consultora Integral de Salud creemos que la prevención de las enfermedades es la política de salud más importante.",

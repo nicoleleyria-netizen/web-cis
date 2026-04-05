@@ -163,9 +163,6 @@ export default function ServiciosMedicosClientPage() {
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-5xl xl:text-6xl text-balance">
               Consultora CIS es una empresa que brinda una amplia oferta de servicios relacionados con la salud, en consultorios y domicilios, sin internación.
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85 text-pretty">
-              Atendemos con profesionales y personal capacitado en múltiples áreas, con procesos eficientes, comunicación fluida y una propuesta orientada a optimizar tiempos y resolver necesidades con calidad.
-            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {bannerButtons.map((button) => (
                 <Button key={button.text} asChild size="lg" variant={button.variant} className="shadow-lg">
@@ -197,44 +194,23 @@ export default function ServiciosMedicosClientPage() {
 
       <section className="bg-background py-12 lg:py-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="rounded-3xl border bg-card p-6 lg:p-8">
-              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Más sobre nuestra empresa</h2>
-              <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Consultora Integral de Salud CIS, es una empresa que brinda una amplia oferta de servicios relacionados con la salud. Abarcamos el primer y el segundo nivel de atención en consultorios y domicilios, sin internación.
-                </p>
-                <p>
-                  Nuestra organización cuenta con profesionales y personal capacitado en múltiples áreas. El servicio brindado es de calidad, basados en la eficiencia y la especialización, optimizando tiempos, manteniendo una comunicación fluida, solucionando problemas y adecuándonos a tu necesidad personal.
-                </p>
-                <p>
-                  Disponemos de procesos de atención eficientes, para que puedas realizar tu consulta sin demoras.
-                </p>
-              </div>
-              <div className="mt-8">
-                <Button asChild size="lg">
-                  <Link href="/empresa/acerca">Más sobre nuestra empresa</Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border bg-secondary p-6 lg:p-8">
-              <h2 className="text-2xl font-semibold text-foreground">Atención eficiente</h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Disponemos de procesos de atención eficientes para que puedas realizar tu consulta sin demoras.
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Más sobre nuestra empresa</h2>
+            <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Consultora Integral de Salud CIS, es una empresa que brinda una amplia oferta de servicios relacionados con la salud. Abarcamos el primer y el segundo nivel de atención en consultorios y domicilios, sin internación.
               </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {[
-                  "Consultorios y domicilios",
-                  "Primer y segundo nivel de atención",
-                  "Sin internación",
-                  "Personal capacitado",
-                ].map((item) => (
-                  <div key={item} className="rounded-xl border bg-background px-4 py-3 text-sm font-medium text-foreground">
-                    {item}
-                  </div>
-                ))}
-              </div>
+              <p>
+                Nuestra organización cuenta con profesionales y personal capacitado en múltiples áreas. El servicio brindado es de calidad, basados en la eficiencia y la especialización, optimizando tiempos, manteniendo una comunicación fluida, solucionando problemas y adecuándonos a tu necesidad personal.
+              </p>
+              <p>
+                Disponemos de procesos de atención eficientes, para que puedas realizar tu consulta sin demoras.
+              </p>
+            </div>
+            <div className="mt-8">
+              <Button asChild size="lg">
+                <Link href="/empresa/acerca">Más sobre nuestra empresa</Link>
+              </Button>
             </div>
           </div>
 
