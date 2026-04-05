@@ -32,7 +32,7 @@ export function Navbar() {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logos/logo-cis-v-sf.jpg"
+            src="/images/logos/logo-cis-vertical.png"
             alt="Consultora CIS"
             width={72}
             height={72}
@@ -40,7 +40,7 @@ export function Navbar() {
             priority
           />
           <Image
-            src="/images/logos/logo-cis-h-sf.jpg"
+            src="/images/logos/logo-cis-horizontal.png"
             alt="Consultora CIS"
             width={190}
             height={64}

@@ -28,14 +28,14 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <div className="rounded-lg bg-white/95 px-2 py-1">
                 <Image
-                  src="/images/logos/logo-cis-h-sf.jpg"
+                  src="/images/logos/logo-cis-horizontal.png"
                   alt="Consultora CIS"
                   width={160}
                   height={64}
                   className="hidden h-10 w-[160px] object-contain object-left sm:block"
                 />
                 <Image
-                  src="/images/logos/logo-cis-v-sf.jpg"
+                  src="/images/logos/logo-cis-vertical.png"
                   alt="Consultora CIS"
                   width={56}
                   height={56}

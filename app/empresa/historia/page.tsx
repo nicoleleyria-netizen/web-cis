@@ -81,7 +81,7 @@ export default function HistoriaPage() {
             </div>
             <div className="relative aspect-video overflow-hidden rounded-xl bg-white p-4">
               <Image
-                src="/images/logos/logo-cis-h-sf.jpg"
+                src="/images/logos/logo-cis-horizontal.png"
                 alt="Trayectoria y evolución de Consultora CIS a lo largo de 18 años"
                 fill
                 className="object-contain"
