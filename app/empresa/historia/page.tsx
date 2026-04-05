@@ -79,12 +79,12 @@ export default function HistoriaPage() {
                 profesionales para satisfacer las crecientes necesidades de nuestros clientes.
               </p>
             </div>
-            <div className="relative aspect-video overflow-hidden rounded-xl">
+            <div className="relative aspect-video overflow-hidden rounded-xl bg-white p-4">
               <Image
-                src="/images/logos/logo-cis-sin-fondo-ref2.jpg"
+                src="/images/logos/logo-cis-h-sf.jpg"
                 alt="Trayectoria y evolución de Consultora CIS a lo largo de 18 años"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

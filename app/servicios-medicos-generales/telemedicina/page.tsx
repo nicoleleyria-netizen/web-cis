@@ -1,28 +1,58 @@
 import type { Metadata } from "next"
-import { StudyPage } from "@/components/studies/study-page"
+import { ServiceInfoPage } from "@/components/service-info-page"
 
 export const metadata: Metadata = {
   title: "Telemedicina",
-  description: "Consultas online y continuidad de atención médica en forma remota.",
+  description: "Teleconsultas médicas online y seguimiento profesional a distancia.",
 }
 
 export default function Page() {
   return (
-    <StudyPage
-      titulo="Telemedicina"
-      resumen="Consultas online y continuidad de atención médica en forma remota."
-      image="/images/servicios-medicos-generales/asesoramiento-nutricional.jpeg"
-      imageAlt="Telemedicina"
-      descripcion={[
-        "En Consultora CIS brindamos este servicio con un enfoque práctico, profesional y orientado a resultados.",
-        "La atención se adapta a cada persona/empresa y busca optimizar tiempos sin perder calidad asistencial.",
-        "Nuestro equipo acompaña todo el proceso para facilitar la gestión del turno y la continuidad de atención.",
+    <ServiceInfoPage
+      title="Telemedicina"
+      summary="Teleconsultas médicas online y seguimiento profesional para continuar la atención desde casa."
+      heroImage="/images/servicios-medicos-generales/asesoramiento-nutricional.jpeg"
+      heroAlt="Telemedicina"
+      intro={[
+        "La telemedicina brinda mayor eficiencia en la gestión de la demanda, reducción de tiempos de estancia hospitalaria y mejor manejo de los tiempos del paciente.",
+        "También disminuye el desplazamiento a centros de salud y hace más accesible la información médica mediante sistemas informáticos seguros.",
+        "En CIS implementamos este servicio para posibilitar la continuidad de la atención médica desde su casa, sin perder calidad asistencial.",
       ]}
-      incluye={[
-        'Teleconsulta médica','Recetas digitales según criterio','Seguimiento profesional remoto'
+      actions={[
+        { text: "Turno online", href: "/turnos-online" },
+        { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
+        { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}
-      requisitos={[
-        'DNI','Conectividad estable'
+      sections={[
+        {
+          title: "Servicios disponibles",
+          content: (
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {[
+                "Teleconsultas médicas online",
+                "Recetas médicas digitales",
+                "Seguimiento profesional remoto",
+                "Atención continua desde casa",
+              ].map((item) => (
+                <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ),
+        },
+        {
+          title: "Artículo relacionado",
+          content: (
+            <p>
+              ¿Te interesa el tema? Leé este artículo sobre{' '}
+              <a className="font-medium text-primary underline-offset-4 hover:underline" href="https://consultoracis.com.ar/servicios-medicos/articulos/que-es-la-telemedicina/" target="_blank" rel="noopener noreferrer">
+                Telemedicina
+              </a>
+              .
+            </p>
+          ),
+        },
       ]}
     />
   )

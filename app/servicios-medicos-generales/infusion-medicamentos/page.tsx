@@ -1,28 +1,49 @@
 import type { Metadata } from "next"
-import { StudyPage } from "@/components/studies/study-page"
+import { ServiceInfoPage } from "@/components/service-info-page"
 
 export const metadata: Metadata = {
   title: "Infusión de Medicamentos",
-  description: "Hospital de día para administración de medicación bajo supervisión médica.",
+  description: "Centro ambulatorio para administración de medicación con supervisión profesional.",
 }
 
 export default function Page() {
   return (
-    <StudyPage
-      titulo="Infusión de Medicamentos"
-      resumen="Hospital de día para administración de medicación bajo supervisión médica."
-      image="/images/sis-real/recepcion-espera.jpg"
-      imageAlt="Infusión de medicamentos hospital de día"
-      descripcion={[
-        "En Consultora CIS brindamos este servicio con un enfoque práctico, profesional y orientado a resultados.",
-        "La atención se adapta a cada persona/empresa y busca optimizar tiempos sin perder calidad asistencial.",
-        "Nuestro equipo acompaña todo el proceso para facilitar la gestión del turno y la continuidad de atención.",
+    <ServiceInfoPage
+      title="Infusión de Medicamentos"
+      summary="Centro ambulatorio para administración especializada de medicación con supervisión médica y confort asistencial."
+      heroImage="/images/sis-real/recepcion-espera.jpg"
+      heroAlt="Infusión de medicamentos"
+      intro={[
+        "Brindamos el servicio de administración endovenosa o subcutánea de medicamentos biológicos, anticuerpos monoclonales y otras drogas que por su complejidad requieren una administración especializada y supervisión médica.",
+        "Ofrecemos un espacio exclusivo para realizar infusiones indicadas por reumatología, ginecología, oncología, dermatología, clínica médica y otras especialidades.",
+        "Nuestro centro se localiza fuera del ámbito hospitalario, priorizando el confort, la comodidad y la atención personalizada durante tratamientos prolongados.",
       ]}
-      incluye={[
-        'Administración endovenosa/subcutánea','Monitoreo por enfermería y médico','Seguimiento de agenda del paciente'
+      actions={[
+        { text: "Turno online", href: "/turnos-online" },
+        { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
+        { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}
-      requisitos={[
-        'DNI','Orden médica','Estudios complementarios si corresponden'
+      sections={[
+        {
+          title: "Características del servicio",
+          content: (
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {[
+                "Ubicación geográfica cómoda y accesible.",
+                "Lugar confortable y atención personalizada.",
+                "Profesionales de enfermería capacitados en la preparación y administración de este tipo de drogas, con experiencia para realizar canalizaciones complejas.",
+                "Monitoreo de profesionales médicos durante el proceso de infusión.",
+                "Seguimiento de la agenda del paciente y sus citas médicas.",
+                "Contacto fluido con el profesional, informando los resultados de la práctica en caso de ser necesario.",
+                "Servicio orientado a instituciones, obras sociales, prepagas, fundaciones y profesionales médicos.",
+              ].map((item) => (
+                <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ),
+        },
       ]}
     />
   )

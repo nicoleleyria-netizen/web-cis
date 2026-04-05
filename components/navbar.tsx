@@ -32,11 +32,19 @@ export function Navbar() {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logos/logo-cis-sin-fondo-ref2.jpg"
+            src="/images/logos/logo-cis-v-sf.jpg"
+            alt="Consultora CIS"
+            width={72}
+            height={72}
+            className="h-10 w-10 object-contain object-left sm:hidden"
+            priority
+          />
+          <Image
+            src="/images/logos/logo-cis-h-sf.jpg"
             alt="Consultora CIS"
             width={190}
             height={64}
-            className="h-10 w-[190px] object-contain object-left"
+            className="hidden h-10 w-[190px] object-contain object-left sm:block"
             priority
           />
         </Link>

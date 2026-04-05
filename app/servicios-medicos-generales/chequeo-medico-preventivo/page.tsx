@@ -1,28 +1,33 @@
 import type { Metadata } from "next"
-import { StudyPage } from "@/components/studies/study-page"
+import { ServiceInfoPage } from "@/components/service-info-page"
 
 export const metadata: Metadata = {
   title: "Chequeo Médico Preventivo",
-  description: "Evaluación integral para detección temprana y prevención de riesgos en salud.",
+  description: "Chequeos preventivos para detectar riesgos y enfermedades en forma temprana.",
 }
 
 export default function Page() {
   return (
-    <StudyPage
-      titulo="Chequeo Médico Preventivo"
-      resumen="Evaluación integral para detección temprana y prevención de riesgos en salud."
-      image="/images/sis-real/reunion-equipo.jpg"
-      imageAlt="Chequeo médico preventivo"
-      descripcion={[
-        "En Consultora CIS brindamos este servicio con un enfoque práctico, profesional y orientado a resultados.",
-        "La atención se adapta a cada persona/empresa y busca optimizar tiempos sin perder calidad asistencial.",
-        "Nuestro equipo acompaña todo el proceso para facilitar la gestión del turno y la continuidad de atención.",
+    <ServiceInfoPage
+      title="Chequeo Médico Preventivo"
+      summary="Evaluación integral para detectar a tiempo enfermedades o riesgos potenciales de desarrollarlas."
+      heroImage="/images/sis-real/reunion-equipo.jpg"
+      heroAlt="Chequeo médico preventivo"
+      intro={[
+        "Descubrir a tiempo cualquier enfermedad, o conocer si existen riesgos potenciales de desarrollarla, nos da mejores expectativas para su tratamiento.",
+        "La prevención es la mejor y más económica forma de mantener la salud.",
+        "Se realizan chequeos anuales con el fin de lograr diagnóstico precoz de enfermedades crónicas como hipertensión arterial, cardiopatía, diabetes, enfermedades pulmonares y distintos tipos de cáncer.",
       ]}
-      incluye={[
-        'Consulta médica integral','Estudios base según perfil','Plan de seguimiento'
+      actions={[
+        { text: "Turno online", href: "/turnos-online" },
+        { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
+        { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}
-      requisitos={[
-        'DNI','Ayuno si corresponde'
+      sections={[
+        {
+          title: "Objetivo del chequeo",
+          content: <p>El seguimiento preventivo permite tratamiento oportuno, disminuye días de ausentismo laboral y mejora la calidad de vida.</p>,
+        },
       ]}
     />
   )

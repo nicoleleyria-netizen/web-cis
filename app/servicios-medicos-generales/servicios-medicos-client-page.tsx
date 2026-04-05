@@ -1,197 +1,380 @@
 "use client"
 
-import Image from "@/components/base-path-image"
 import Link from "next/link"
-import {
-  Stethoscope,
-  FlaskConical,
-  FileText,
-  Video,
-  Pill,
-  Activity,
-  HeartPulse,
-  Syringe,
-  Home,
-  Apple,
-  MousePointer,
-} from "lucide-react"
+import { Activity, Apple, ChevronRight, FileText, FlaskConical, HeartPulse, Home, Pill, Stethoscope, Syringe, Video } from "lucide-react"
+import Image from "@/components/base-path-image"
 import { Button } from "@/components/ui/button"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { CTASection } from "@/components/cta-section"
+
+const bannerButtons = [
+  { text: "Turno online", href: "/turnos-online", variant: "default" as const },
+  { text: "Portal empresa", href: "https://misaludmedica.com/Companies.html?institution=cis", external: true, variant: "secondary" as const },
+  { text: "Portal persona", href: "https://misaludmedica.com/Home.html?institution=cis", external: true, variant: "secondary" as const },
+]
 
 const servicios = [
   {
-    id: "consultas-medicas",
     icon: Stethoscope,
     title: "Consultas Médicas",
-    href: "/servicios-medicos-generales/consultas-medicas",
-    image: "/images/servicios-medicos-generales/consultas-medicas.png",
-    description: "Atención médica profesional con especialistas en diversas áreas de la salud.",
+    href: "#consultas-medicas",
+    description: "Medicina general, clínica médica, reumatología, traumatología y más.",
+    accordion: true,
   },
   {
-    id: "laboratorio",
-    icon: FlaskConical,
-    title: "Laboratorio de Análisis Clínicos",
-    href: "/servicios-medicos-generales/laboratorio-analisis-clinicos",
-    image: "/images/servicios-medicos-generales/servicios-medicos-generales.png",
-    description: "Análisis clínicos de baja y alta complejidad con estándares de calidad y bioseguridad.",
-  },
-  {
-    id: "certificados-aptitud",
-    icon: FileText,
-    title: "Certificados Médicos de Aptitud",
-    href: "/servicios-medicos-generales/certificados-medicos-aptitud",
-    image: "/images/servicios-medicos-generales/certificados-medicos-aptitud.png",
-    description: "Certificaciones médicas para distintas actividades y requisitos específicos.",
-  },
-  {
-    id: "telemedicina",
-    icon: Video,
-    title: "Telemedicina",
-    href: "/servicios-medicos-generales/telemedicina",
-    image: "/images/servicios-medicos-generales/servicios-medicos-generales.png",
-    description: "Consultas médicas a distancia y seguimiento profesional remoto.",
-  },
-  {
-    id: "infusion-medicamentos",
     icon: Pill,
     title: "Infusión de Medicamentos",
     href: "/servicios-medicos-generales/infusion-medicamentos",
-    image: "/images/servicios-medicos-generales/servicios-medicos-generales.png",
-    description: "Hospital de día para administración de medicación con supervisión médica.",
+    description: "Centro ambulatorio para administración de medicación con supervisión médica.",
   },
   {
-    id: "examenes-complementarios",
     icon: Activity,
     title: "Exámenes Complementarios",
-    href: "/servicios-medicos-generales/examenes-complementarios",
-    image: "/images/servicios-medicos-generales/servicios-medicos-generales.png",
-    description: "Estudios diagnósticos para evaluación integral de salud.",
+    href: "#examenes-complementarios",
+    description: "Radiología, ergometría, holter, ecografías y más estudios integrados.",
+    accordion: true,
   },
   {
-    id: "chequeo-preventivo",
     icon: HeartPulse,
     title: "Chequeo Médico Preventivo",
     href: "/servicios-medicos-generales/chequeo-medico-preventivo",
-    image: "/images/servicios-medicos-generales/chequeo-medico-preventivo.png",
-    description: "Evaluación preventiva para detección temprana de factores de riesgo.",
+    description: "Evaluación preventiva para detección temprana de riesgos y enfermedades.",
   },
   {
-    id: "vacunatorio",
-    icon: Syringe,
-    title: "Vacunatorio",
-    href: "/servicios-medicos-generales/vacunatorio",
-    image: "/images/servicios-medicos-generales/servicios-medicos-generales.png",
-    description: "Aplicación de vacunas del calendario y especiales según indicación.",
+    icon: FlaskConical,
+    title: "Laboratorio de Análisis Clínicos",
+    href: "/servicios-medicos-generales/laboratorio-analisis-clinicos",
+    description: "Análisis de baja y alta complejidad con trazabilidad y resultados confiables.",
   },
   {
-    id: "servicios-domicilio",
-    icon: Home,
-    title: "Servicios Médicos a Domicilio",
-    href: "/servicios-medicos-generales/servicios-medicos-domicilio",
-    image: "/images/servicios-medicos-generales/servicios-medicos-generales.png",
-    description: "Atención y prácticas médicas en domicilio para pacientes que lo requieran.",
-  },
-  {
-    id: "asesoramiento-nutricional",
-    icon: Apple,
-    title: "Asesoramiento Nutricional",
-    href: "/servicios-medicos-generales/asesoramiento-nutricional",
-    image: "/images/servicios-medicos-generales/asesoramiento-nutricional.jpeg",
-    description: "Planes de alimentación personalizados y seguimiento profesional.",
-  },
-  {
-    id: "certificado-escolar",
     icon: FileText,
     title: "Certificado Escolar",
     href: "/servicios-medicos-generales/certificado-escolar",
-    image: "/images/servicios-medicos-generales/certificado-escolar.png",
-    description: "Apto médico escolar en consultorio o con operativos para instituciones.",
+    description: "Apto médico escolar para instituciones y personas en edad escolar.",
   },
   {
-    id: "emmac",
     icon: Activity,
     title: "EMMAC",
-    href: "/servicios-medicos-generales/emmac",
-    image: "/images/servicios-medicos-generales/emmac.png",
-    description: "Examen Médico para Mediana y Alta Competencia para comunidad deportiva.",
+    href: "/medicina-del-deporte/emmac",
+    description: "Examen deportivo derivado a la sección de Medicina del Deporte.",
   },
+  {
+    icon: FileText,
+    title: "Certificados Médicos de Aptitud",
+    href: "#certificados-aptitud",
+    description: "Conducción, deporte, estudios, viajes y aptitudes especiales.",
+    accordion: true,
+  },
+  {
+    icon: Video,
+    title: "Telemedicina",
+    href: "/servicios-medicos-generales/telemedicina",
+    description: "Consultas online y seguimiento profesional remoto.",
+  },
+  {
+    icon: Syringe,
+    title: "Vacunatorio",
+    href: "/servicios-medicos-generales/vacunatorio",
+    description: "Vacunación en consultorio o domicilio con control profesional.",
+  },
+  {
+    icon: Home,
+    title: "Servicios Médicos a Domicilio",
+    href: "/servicios-medicos-generales/servicios-medicos-domicilio",
+    description: "Atención médica y prácticas en domicilio para pacientes que lo requieran.",
+  },
+  {
+    icon: Apple,
+    title: "Asesoramiento Nutricional",
+    href: "/servicios-medicos-generales/asesoramiento-nutricional",
+    description: "Planes de alimentación y seguimiento nutricional personalizado.",
+  },
+]
+
+const consultasMedicas = [
+  "Medicina general",
+  "Clínica médica",
+  "Reumatología",
+  "Traumatología",
+  "Medicina del deporte",
+  "Cardiología",
+  "Oftalmología",
+  "Neumonología",
+  "Diabetología",
+  "Psiquiatría",
+  "Kinesiología",
+  "Psicología",
+  "Fonoaudiología",
+  "Neurología",
+  "Ginecología",
+  "Otorrinolaringología",
+  "Dermatología",
+]
+
+const examenesComplementarios = [
+  "Radiología digitalizada",
+  "Ergometría",
+  "MAPA",
+  "HOLTER",
+  "Electrocardiografía",
+  "Espirometría",
+  "Electroencefalografía",
+  "Audiometría, logoaudiometría, sisigrama, valoración del lenguaje",
+  "Ecografías",
+  "Ecocardiografía",
+  "Laringoscopia, fibrolaringoscopia, rinoscopia",
+  "Agudeza visual, fondo de ojos",
+  "PAP, colposcopia",
+]
+
+const certificadosAptitud = [
+  "Certificados para carnet de conducir profesional: taxis, remises, choferes de larga distancia, entre otros.",
+  "Certificado para carnet de conducir particular y sus estudios complementarios",
+  "Certificados de salud para actividad física, maratones, entre otros",
+  "Aptitud para uso de natatorios y piletas.",
+  "Aptitud para gimnasios.",
+  "Ingreso a universidades e instituciones educativas.",
+  "Certificados escolares",
+  "Certificados para viajes turísticos, de egresados, entre otros",
+  "Certificaciones para cruceros",
+  "Exámenes complementarios para carnet de timonel y embarcaciones",
+  "Aptitud para ingresos a las FFAA",
+  "Aptitud ANMAC (para uso de arma de fuego)",
 ]
 
 export default function ServiciosMedicosClientPage() {
   return (
     <main>
-      <section className="relative flex h-[60vh] min-h-[400px] items-center justify-center overflow-hidden">
+      <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
         <Image
           src="/images/servicios-medicos-generales/servicios-medicos-generales.png"
           alt="Servicios Médicos Generales"
           fill
-          className="object-cover"
+          className="object-cover opacity-20"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">Servicios Médicos Generales</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80 sm:text-xl">Atención médica integral para empresas y particulares</p>
-        </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <MousePointer className="h-6 w-6 text-white/70" />
-        </div>
-      </section>
-
-      <section className="bg-background py-16 lg:py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Nuestros Servicios</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Hacé click en cada servicio para ver información ampliada y solicitar turno.</p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {servicios.map((servicio) => {
-              const Icon = servicio.icon
-              return (
-                <Link
-                  key={servicio.id}
-                  href={servicio.href}
-                  className="group flex gap-4 rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/50 hover:bg-primary/5 hover:shadow-md"
-                >
-                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
-                    <Image
-                      src={servicio.image}
-                      alt={servicio.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="64px"
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div className="absolute bottom-1 right-1 flex h-6 w-6 items-center justify-center rounded-md bg-white/90 text-primary">
-                      <Icon className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-primary">{servicio.title}</h3>
-                    <p className="mt-1 text-muted-foreground">{servicio.description}</p>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-2xl font-bold sm:text-3xl">Atención Integral</h2>
-            <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90">
-              En CIS contamos con un equipo multidisciplinario de profesionales comprometidos con brindar atención accesible, eficiente y personalizada.
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80" />
+        <div className="container relative z-10 mx-auto grid gap-10 px-4 lg:grid-cols-2 lg:px-8">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              Servicios Médicos Generales
+            </div>
+            <h1 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-5xl xl:text-6xl text-balance">
+              Consultora CIS es una empresa que brinda una amplia oferta de servicios relacionados con la salud, en consultorios y domicilios, sin internación.
+            </h1>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85 text-pretty">
+              Atendemos con profesionales y personal capacitado en múltiples áreas, con procesos eficientes, comunicación fluida y una propuesta orientada a optimizar tiempos y resolver necesidades con calidad.
             </p>
-            <div className="mt-8">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/contacto">Solicitar turno</Link>
-              </Button>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {bannerButtons.map((button) => (
+                <Button key={button.text} asChild size="lg" variant={button.variant} className="shadow-lg">
+                  {button.external ? (
+                    <a href={button.href} target="_blank" rel="noopener noreferrer">
+                      {button.text}
+                    </a>
+                  ) : (
+                    <Link href={button.href}>{button.text}</Link>
+                  )}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          <div className="self-center rounded-3xl border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur-sm">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/servicios-medicos-generales/servicios-medicos-generales.png"
+                alt="Consultora CIS servicios médicos generales"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
       </section>
+
+      <section className="bg-background py-12 lg:py-16">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="rounded-3xl border bg-card p-6 lg:p-8">
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Más sobre nuestra empresa</h2>
+              <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Consultora Integral de Salud CIS, es una empresa que brinda una amplia oferta de servicios relacionados con la salud. Abarcamos el primer y el segundo nivel de atención en consultorios y domicilios, sin internación.
+                </p>
+                <p>
+                  Nuestra organización cuenta con profesionales y personal capacitado en múltiples áreas. El servicio brindado es de calidad, basados en la eficiencia y la especialización, optimizando tiempos, manteniendo una comunicación fluida, solucionando problemas y adecuándonos a tu necesidad personal.
+                </p>
+                <p>
+                  Disponemos de procesos de atención eficientes, para que puedas realizar tu consulta sin demoras.
+                </p>
+              </div>
+              <div className="mt-8">
+                <Button asChild size="lg">
+                  <Link href="/empresa/acerca">Más sobre nuestra empresa</Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border bg-secondary p-6 lg:p-8">
+              <h2 className="text-2xl font-semibold text-foreground">Atención eficiente</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Disponemos de procesos de atención eficientes para que puedas realizar tu consulta sin demoras.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Consultorios y domicilios",
+                  "Primer y segundo nivel de atención",
+                  "Sin internación",
+                  "Personal capacitado",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border bg-background px-4 py-3 text-sm font-medium text-foreground">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Nuestros Servicios</h2>
+              <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
+                Consultas médicas, estudios, certificados y atención integral para personas, empresas e instituciones.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {servicios.map((servicio) => {
+                const Icon = servicio.icon
+                const card = (
+                  <div className="group flex gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md">
+                    <div className="relative h-16 w-16 flex-shrink-0 rounded-xl bg-primary/10 text-primary">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Icon className="h-7 w-7" />
+                      </div>
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                        {servicio.title}
+                        <ChevronRight className="h-4 w-4 text-primary/70" />
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{servicio.description}</p>
+                    </div>
+                  </div>
+                )
+
+                if (servicio.accordion) {
+                  return (
+                    <a key={servicio.title} href={servicio.href} className="block scroll-mt-24">
+                      {card}
+                    </a>
+                  )
+                }
+
+                return (
+                  <Link key={servicio.title} href={servicio.href} className="block">
+                    {card}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="consultas-medicas" className="bg-secondary py-16 lg:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
+            <h2 className="text-3xl font-bold text-foreground">Consultas Médicas</h2>
+            <p className="mt-3 text-muted-foreground">Desplegá las especialidades disponibles y coordiná tu atención sin salir de esta página.</p>
+            <Accordion type="multiple" className="mt-6">
+              <AccordionItem value="consultas-medicas-list">
+                <AccordionTrigger>Ver especialidades</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {consultasMedicas.map((item) => (
+                      <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Button asChild><Link href="/turnos-online">Turno online</Link></Button>
+                    <Button asChild variant="secondary"><a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
+                    <Button asChild variant="outline"><Link href="/contacto">Formulario de contacto</Link></Button>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section id="examenes-complementarios" className="py-16 lg:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
+            <h2 className="text-3xl font-bold text-foreground">Exámenes Complementarios</h2>
+            <p className="mt-3 text-muted-foreground">Estudios diagnósticos integrados con una propuesta ágil y organizada.</p>
+            <Accordion type="multiple" className="mt-6">
+              <AccordionItem value="examenes-complementarios-list">
+                <AccordionTrigger>Ver opciones disponibles</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {examenesComplementarios.map((item) => (
+                      <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Button asChild><Link href="/turnos-online">Turno online</Link></Button>
+                    <Button asChild variant="secondary"><a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
+                    <Button asChild variant="outline"><Link href="/contacto">Formulario de contacto</Link></Button>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section id="certificados-aptitud" className="bg-secondary py-16 lg:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
+            <h2 className="text-3xl font-bold text-foreground">Certificados Médicos de Aptitud</h2>
+            <p className="mt-3 text-muted-foreground">Seleccioná la aptitud que necesitás y solicitá tu turno desde aquí.</p>
+            <Accordion type="multiple" className="mt-6">
+              <AccordionItem value="certificados-aptitud-list">
+                <AccordionTrigger>Ver tipos de certificados</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid gap-2 sm:grid-cols-2">
+                    {certificadosAptitud.map((item) => (
+                      <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Button asChild><Link href="/turnos-online">Turno online</Link></Button>
+                    <Button asChild variant="secondary"><a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
+                    <Button asChild variant="outline"><Link href="/contacto">Formulario de contacto</Link></Button>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Atención integral en un solo lugar"
+        description="Coordiná tu atención por turno online, WhatsApp o contacto directo."
+        primaryCTA={{ text: "Turno online", href: "/turnos-online" }}
+        secondaryCTA={{ text: "Más sobre nuestra empresa", href: "/empresa/acerca" }}
+      />
     </main>
   )
 }

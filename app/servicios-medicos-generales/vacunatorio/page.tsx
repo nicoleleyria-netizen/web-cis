@@ -1,28 +1,48 @@
 import type { Metadata } from "next"
-import { StudyPage } from "@/components/studies/study-page"
+import { ServiceInfoPage } from "@/components/service-info-page"
 
 export const metadata: Metadata = {
   title: "Vacunatorio",
-  description: "Aplicación de vacunas de calendario y especiales con control profesional.",
+  description: "Servicio de vacunación integral para empresas, instituciones y personas.",
 }
 
 export default function Page() {
   return (
-    <StudyPage
-      titulo="Vacunatorio"
-      resumen="Aplicación de vacunas de calendario y especiales con control profesional."
-      image="/images/sis-real/medicina-laboral-real.jpg"
-      imageAlt="Vacunatorio"
-      descripcion={[
-        "En Consultora CIS brindamos este servicio con un enfoque práctico, profesional y orientado a resultados.",
-        "La atención se adapta a cada persona/empresa y busca optimizar tiempos sin perder calidad asistencial.",
-        "Nuestro equipo acompaña todo el proceso para facilitar la gestión del turno y la continuidad de atención.",
+    <ServiceInfoPage
+      title="Vacunatorio"
+      summary="Servicio de vacunación integral para empresas, instituciones y personas, con control y seguimiento profesional."
+      heroImage="/images/sis-real/medicina-laboral-real.jpg"
+      heroAlt="Vacunatorio"
+      intro={[
+        "En Consultora Integral de Salud creemos que la prevención de las enfermedades es la política de salud más importante.",
+        "Por eso ofrecemos un servicio de vacunación a empresas, instituciones y personas que lo requieran.",
+        "Brindamos un servicio de calidad, priorizando el cuidado del paciente y la seguridad y eficacia de las vacunas aplicadas.",
       ]}
-      incluye={[
-        'Vacunas de calendario','Vacunas especiales según indicación','Registro y control'
+      actions={[
+        { text: "Turno online", href: "/turnos-online" },
+        { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
+        { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}
-      requisitos={[
-        'DNI','Carnet de vacunación si lo tiene'
+      sections={[
+        {
+          title: "Nuestro servicio integral incluye",
+          content: (
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {[
+                "Asesoramiento médico para la prevención de enfermedades infectocontagiosas a través de los esquemas de vacunación.",
+                "Gestión de campañas de vacunación a empresas.",
+                "Aplicación de vacunas tanto en consultorio como en domicilio.",
+                "Control post-vacunación.",
+                "Seguimiento de los esquemas personales de vacunación, hasta cumplimentarlos.",
+                "Atención médica y exámenes complementarios, disponibles de ser necesario.",
+              ].map((item) => (
+                <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ),
+        },
       ]}
     />
   )

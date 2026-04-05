@@ -1,28 +1,41 @@
 import type { Metadata } from "next"
-import { StudyPage } from "@/components/studies/study-page"
+import Link from "next/link"
+import { ServiceInfoPage } from "@/components/service-info-page"
 
 export const metadata: Metadata = {
   title: "EMMAC",
-  description: "Examen Médico para Mediana y Alta Competencia para práctica deportiva.",
+  description: "Examen Médico para Mediana y Alta Competencia disponible en Medicina del Deporte.",
 }
 
 export default function Page() {
   return (
-    <StudyPage
-      titulo="EMMAC"
-      resumen="Examen Médico para Mediana y Alta Competencia para práctica deportiva."
-      image="/images/sis-real/evaluacion-deportiva-clinica.jpg"
-      imageAlt="EMMAC en servicios médicos"
-      descripcion={[
-        "En Consultora CIS brindamos este servicio con un enfoque práctico, profesional y orientado a resultados.",
-        "La atención se adapta a cada persona/empresa y busca optimizar tiempos sin perder calidad asistencial.",
-        "Nuestro equipo acompaña todo el proceso para facilitar la gestión del turno y la continuidad de atención.",
+    <ServiceInfoPage
+      title="EMMAC"
+      summary="El examen EMMAC está disponible en la sección de Medicina del Deporte."
+      heroImage="/images/sis-real/evaluacion-deportiva-clinica.jpg"
+      heroAlt="EMMAC en servicios médicos"
+      intro={[
+        "El Examen Médico para Mediana y Alta Competencia forma parte de nuestra oferta de medicina del deporte.",
+        "Si buscás esta práctica específica, te derivamos a la página correcta para que la encuentres junto a la información deportiva correspondiente.",
       ]}
-      incluye={[
-        'Electrocardiograma','Ergometría según criterio','Laboratorio según criterio'
+      actions={[
+        { text: "Ir a EMMAC en Medicina del Deporte", href: "/medicina-del-deporte/emmac" },
+        { text: "Turno online", href: "/turnos-online", variant: "secondary" },
+        { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "outline" },
       ]}
-      requisitos={[
-        'DNI','Ayuno si se indica laboratorio'
+      sections={[
+        {
+          title: "Acceso directo",
+          content: (
+            <p>
+              También podés ir directamente a la página de{' '}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/medicina-del-deporte/emmac">
+                EMMAC en Medicina del Deporte
+              </Link>
+              .
+            </p>
+          ),
+        },
       ]}
     />
   )

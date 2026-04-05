@@ -26,13 +26,22 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Image
-                src="/images/logos/logo-cis-sin-fondo-ref2.jpg"
-                alt="Consultora CIS"
-                width={160}
-                height={64}
-                className="h-10 w-[160px] object-contain object-left brightness-0 invert"
-              />
+              <div className="rounded-lg bg-white/95 px-2 py-1">
+                <Image
+                  src="/images/logos/logo-cis-h-sf.jpg"
+                  alt="Consultora CIS"
+                  width={160}
+                  height={64}
+                  className="hidden h-10 w-[160px] object-contain object-left sm:block"
+                />
+                <Image
+                  src="/images/logos/logo-cis-v-sf.jpg"
+                  alt="Consultora CIS"
+                  width={56}
+                  height={56}
+                  className="h-10 w-10 object-contain object-left sm:hidden"
+                />
+              </div>
             </div>
             <p className="text-sm text-background/70">
               Somos una empresa de servicios con más de 18 años de experiencia acompañando y asesorando a nuestros
