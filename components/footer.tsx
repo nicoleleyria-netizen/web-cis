@@ -27,11 +27,11 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
-                src="/images/logos/logo-cis-h-sf.jpg"
+                src="/images/logos/logo-cis-sin-fondo-ref2.jpg"
                 alt="Consultora CIS"
                 width={160}
                 height={64}
-                className="h-10 w-[160px] object-cover object-center"
+                className="h-10 w-[160px] object-contain object-left brightness-0 invert"
               />
             </div>
             <p className="text-sm text-background/70">
