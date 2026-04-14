@@ -210,7 +210,7 @@ export default function MedicinaLaboralClientPage() {
               href="/turnos-online"
               className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
             >
-              Turno Online
+              Solicitar Turno
             </Link>
             <a
               href="https://misaludmedica.com/Companies.html?institution=cis"

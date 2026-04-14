@@ -21,7 +21,7 @@ export default function Page() {
         "Envíenos su consulta a continuación y exponga su necesidad: con gusto crearemos un servicio personalizado para su satisfacción.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

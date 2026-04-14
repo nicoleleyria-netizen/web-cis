@@ -19,7 +19,7 @@ export default function Page() {
         "Se realizan chequeos anuales con el fin de lograr diagnóstico precoz de enfermedades crónicas como hipertensión arterial, cardiopatía, diabetes, enfermedades pulmonares y distintos tipos de cáncer.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

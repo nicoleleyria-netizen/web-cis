@@ -35,7 +35,7 @@ export function ServiceInfoPage({
   sections = [],
   actions = [],
   bottomTitle = "¿Querés coordinar tu atención?",
-  bottomDescription = "Podés hacerlo por turno online, WhatsApp o desde la página de contacto.",
+  bottomDescription = "Podés hacerlo por solicitar turno, WhatsApp o desde la página de contacto.",
 }: ServiceInfoPageProps) {
   return (
     <>
@@ -89,7 +89,7 @@ export function ServiceInfoPage({
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href="/turnos-online">Turno online</Link>
+                  <Link href="/turnos-online">Solicitar Turno</Link>
                 </Button>
                 <Button asChild variant="outline" className="bg-transparent">
                   <a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">
@@ -119,7 +119,7 @@ export function ServiceInfoPage({
       <CTASection
         title={bottomTitle}
         description={bottomDescription}
-        primaryCTA={{ text: "Turno online", href: "/turnos-online" }}
+        primaryCTA={{ text: "Solicitar Turno", href: "/turnos-online" }}
         secondaryCTA={{ text: "Formulario de contacto", href: "/contacto" }}
         whatsappCTA
       />

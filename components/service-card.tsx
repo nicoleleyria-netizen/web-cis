@@ -8,16 +8,15 @@ interface ServiceCardProps {
   title: string
   description: string
   href: string
-  icon: React.ReactNode
   image: string
 }
 
-export function ServiceCard({ title, description, href, icon, image }: ServiceCardProps) {
+export function ServiceCard({ title, description, href, image }: ServiceCardProps) {
   return (
     <Link href={href} className="group">
       <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
         {/* Image Section */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-40 overflow-hidden">
           <Image
             src={image || "/placeholder.svg"}
             alt={title}
@@ -25,9 +24,6 @@ export function ServiceCard({ title, description, href, icon, image }: ServiceCa
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-          <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 text-primary shadow-lg">
-            {icon}
-          </div>
         </div>
 
         <CardHeader className="pb-2">

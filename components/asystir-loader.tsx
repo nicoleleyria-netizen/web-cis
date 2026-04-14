@@ -1,6 +1,7 @@
 "use client"
 
 let loadPromise: Promise<void> | null = null
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 function waitFor(predicate: () => boolean, timeout = 20000, ms = 120): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -58,7 +59,7 @@ export function loadAsystirOnDemand(): Promise<void> {
     }
 
     // 2) Config local (public)
-    await ensureScript("/asystir_conf11aa.js", "asystir-config-public")
+    await ensureScript(`${basePath}/asystir_conf11aa.js`, "asystir-config-public")
 
     // 3) Esperar API global; si no aparece, cargar Process3 explícitamente
     try {

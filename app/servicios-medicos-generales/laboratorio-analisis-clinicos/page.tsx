@@ -19,7 +19,7 @@ export default function Page() {
         "Realizamos todos los análisis y determinaciones de baja y alta complejidad con extracciones realizadas por personal calificado y entrenado en bioseguridad.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

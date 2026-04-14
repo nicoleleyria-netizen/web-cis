@@ -125,7 +125,7 @@ export default function MedicinaDelDeportePage() {
                   href="/turnos-online"
                   className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
                 >
-                  Turno online
+                  Solicitar Turno
                 </Link>
                 <a
                   href="https://misaludmedica.com/Companies.html?institution=cis"
@@ -333,8 +333,8 @@ export default function MedicinaDelDeportePage() {
 
       <CTASection
         title="¿Necesitás habilitar tu práctica o cobertura deportiva?"
-        description="Podés coordinar por turno online, WhatsApp o formulario de contacto."
-        primaryCTA={{ text: "Turno online", href: "/turnos-online" }}
+        description="Podés coordinar desde Solicitar Turno, WhatsApp o formulario de contacto."
+        primaryCTA={{ text: "Solicitar Turno", href: "/turnos-online" }}
         secondaryCTA={{ text: "Formulario de contacto", href: "/contacto" }}
         whatsappCTA
       />
