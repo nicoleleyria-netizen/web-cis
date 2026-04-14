@@ -8,7 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CTASection } from "@/components/cta-section"
 
 const bannerButtons = [
-  { text: "Turno online", href: "/turnos-online", variant: "default" as const },
+  { text: "Solicitar Turno", href: "/turnos-online", variant: "default" as const },
   { text: "Portal empresa", href: "https://misaludmedica.com/Companies.html?institution=cis", external: true, variant: "secondary" as const },
   { text: "Portal persona", href: "https://misaludmedica.com/Home.html?institution=cis", external: true, variant: "secondary" as const },
 ]
@@ -278,7 +278,7 @@ export default function ServiciosMedicosClientPage() {
                     ))}
                   </ul>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <Button asChild><Link href="/turnos-online">Turno online</Link></Button>
+                    <Button asChild><Link href="/turnos-online">Solicitar Turno</Link></Button>
                     <Button asChild variant="secondary"><a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
                     <Button asChild variant="outline"><Link href="/contacto">Formulario de contacto</Link></Button>
                   </div>
@@ -306,7 +306,7 @@ export default function ServiciosMedicosClientPage() {
                     ))}
                   </ul>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <Button asChild><Link href="/turnos-online">Turno online</Link></Button>
+                    <Button asChild><Link href="/turnos-online">Solicitar Turno</Link></Button>
                     <Button asChild variant="secondary"><a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
                     <Button asChild variant="outline"><Link href="/contacto">Formulario de contacto</Link></Button>
                   </div>
@@ -334,7 +334,7 @@ export default function ServiciosMedicosClientPage() {
                     ))}
                   </ul>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <Button asChild><Link href="/turnos-online">Turno online</Link></Button>
+                    <Button asChild><Link href="/turnos-online">Solicitar Turno</Link></Button>
                     <Button asChild variant="secondary"><a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
                     <Button asChild variant="outline"><Link href="/contacto">Formulario de contacto</Link></Button>
                   </div>
@@ -347,8 +347,8 @@ export default function ServiciosMedicosClientPage() {
 
       <CTASection
         title="Atención integral en un solo lugar"
-        description="Coordiná tu atención por turno online, WhatsApp o contacto directo."
-        primaryCTA={{ text: "Turno online", href: "/turnos-online" }}
+        description="Coordiná tu atención desde Solicitar Turno, WhatsApp o contacto directo."
+        primaryCTA={{ text: "Solicitar Turno", href: "/turnos-online" }}
         secondaryCTA={{ text: "Más sobre nuestra empresa", href: "/empresa/acerca" }}
       />
     </main>

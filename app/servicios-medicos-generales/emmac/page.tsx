@@ -20,7 +20,7 @@ export default function Page() {
       ]}
       actions={[
         { text: "Ir a EMMAC en Medicina del Deporte", href: "/medicina-del-deporte/emmac" },
-        { text: "Turno online", href: "/turnos-online", variant: "secondary" },
+        { text: "Solicitar Turno", href: "/turnos-online", variant: "secondary" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "outline" },
       ]}
       sections={[

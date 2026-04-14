@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "@/components/base-path-image"
-import { Stethoscope, Briefcase, Activity, ArrowRight, MapPin, Users, Award } from "lucide-react"
+import { ArrowRight, MapPin, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ServiceCard } from "@/components/service-card"
 import { PostCard } from "@/components/post-card"
@@ -13,21 +13,18 @@ const services = [
     title: "Medicina Laboral",
     description: "Exámenes preocupacionales, periódicos, y servicios de salud ocupacional para empresas.",
     href: "/medicina-laboral",
-    icon: <Stethoscope className="h-6 w-6" />,
-    image: "/images/medicina-laboral/gestion-salud-empresa.png",
+    image: "/images/sis-real/medicina-laboral-real.jpg",
   },
   {
     title: "Servicios Médicos Generales",
     description: "Atención médica integral con profesionales en múltiples especialidades.",
     href: "/servicios-medicos-generales",
-    icon: <Briefcase className="h-6 w-6" />,
-    image: "/images/sis-real/recepcion-equipo.jpg",
+    image: "/images/sis-real/consultorio-detalle.jpg",
   },
   {
     title: "Medicina del Deporte",
     description: "Exámenes de aptitud física, EMMAC y asesoramiento para deportistas.",
     href: "/medicina-del-deporte",
-    icon: <Activity className="h-6 w-6" />,
     image: "/images/medicina-del-deporte/cobertura-salud-deportista-mdd.jpg",
   },
 ]

@@ -13,7 +13,7 @@ const quickLinks = [
   { name: "Acerca de Nosotros", href: "/empresa/acerca" },
   { name: "Nuestra Historia", href: "/empresa/historia" },
   { name: "Artículos", href: "https://consultoracis.com.ar/blog", external: true },
-  { name: "Preguntas Frecuentes", href: "/preguntas-frecuentes" },
+  { name: "Preguntas Frecuentes", href: "https://consultoracis.com.ar/preguntasfrecuentes.html", external: true },
   { name: "Contacto", href: "/contacto" },
   { name: "Trabaja con Nosotros", href: "/trabaja-con-nosotros" },
 ]

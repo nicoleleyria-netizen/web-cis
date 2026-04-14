@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "@/components/base-path-image"
+import { showReservationArea } from "@/components/asystir-loader"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -13,14 +14,14 @@ const slides = [
     title: "Medicina Laboral",
     subtitle: "Más de 18 años cuidando la salud de tu empresa",
     cta: { text: "Conocer más", href: "/medicina-laboral" },
-    image: "/images/sis-real/recepcion-paciente.jpg",
+    image: "/images/sis-real/medicina-laboral-real.jpg",
   },
   {
     id: 2,
     title: "Servicios Médicos Generales",
     subtitle: "Atención integral con profesionales de todas las especialidades",
     cta: { text: "Conocer más", href: "/servicios-medicos-generales" },
-    image: "/images/sis-real/recepcion-espera.jpg",
+    image: "/images/sis-real/consultorio-detalle.jpg",
   },
   {
     id: 3,
@@ -47,17 +48,12 @@ export function HeroCarousel() {
     setCurrentSlide(index)
   }
 
-  const handleTurnoOnline = () => {
-    const fn = (window as any).ShowReservationArea
-    if (typeof fn === "function") {
-      fn()
+  const handleTurnoOnline = async () => {
+    const opened = await showReservationArea()
+    if (opened) {
       return
     }
-    setTimeout(() => {
-      const retry = (window as any).ShowReservationArea
-      if (typeof retry === "function") retry()
-      else window.open("https://misaludmedica.com/Home.html?institution=cis", "_blank", "noopener,noreferrer")
-    }, 700)
+    window.open("https://misaludmedica.com/Home.html?institution=cis", "_blank", "noopener,noreferrer")
   }
 
   useEffect(() => {
@@ -77,7 +73,7 @@ export function HeroCarousel() {
       onMouseLeave={() => setIsPaused(false)}
       aria-label="Carrusel de servicios principales"
     >
-      <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
+      <div className="relative min-h-[420px] md:min-h-[520px] lg:min-h-[620px]">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -146,7 +142,7 @@ export function HeroCarousel() {
                           onClick={handleTurnoOnline}
                           className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white shadow-xl text-base px-8 py-6"
                         >
-                          Turno Online
+                          Solicitar Turno
                         </Button>
                         <Button asChild size="lg" className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white shadow-xl text-base px-8 py-6">
                           <a href="https://misaludmedica.com/Home.html?institution=cis" target="_blank" rel="noopener noreferrer">

@@ -1,20 +1,24 @@
 "use client"
 
 import { useEffect } from "react"
+import { showReservationArea } from "@/components/asystir-loader"
 
 export default function TurnosOnlinePage() {
   useEffect(() => {
-    const fn = (window as any).ShowReservationArea
-    if (typeof fn === "function") {
-      fn()
-      return
+    let canceled = false
+
+    const openTurnero = async () => {
+      const opened = await showReservationArea()
+      if (!opened && !canceled) {
+        window.location.href = "https://misaludmedica.com/Home.html?institution=cis"
+      }
     }
-    const t = setTimeout(() => {
-      const retry = (window as any).ShowReservationArea
-      if (typeof retry === "function") retry()
-      else window.location.href = "https://misaludmedica.com/Home.html?institution=cis"
-    }, 900)
-    return () => clearTimeout(t)
+
+    void openTurnero()
+
+    return () => {
+      canceled = true
+    }
   }, [])
 
   return (

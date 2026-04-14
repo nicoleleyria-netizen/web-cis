@@ -29,22 +29,14 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
+      <nav className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/images/logos/logo-cis-vertical.png"
-            alt="Consultora CIS"
-            width={72}
-            height={72}
-            className="h-10 w-10 object-contain object-left sm:hidden"
-            priority
-          />
           <Image
             src="/images/logos/logo-cis-horizontal.png"
             alt="Consultora CIS"
-            width={190}
-            height={64}
-            className="hidden h-10 w-[190px] object-contain object-left sm:block"
+            width={220}
+            height={70}
+            className="h-12 w-[190px] object-contain object-left sm:w-[220px]"
             priority
           />
         </Link>
