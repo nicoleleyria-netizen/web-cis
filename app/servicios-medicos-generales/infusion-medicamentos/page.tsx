@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Infusión de Medicamentos"
       summary="Centro ambulatorio para administración especializada de medicación con supervisión médica y confort asistencial."
-      heroImage="/images/sis-real/recepcion-espera.jpg"
+      heroImage="/images/servicios-medicos-generales/infusion-medicamentos-nuevo.jpg"
       heroAlt="Infusión de medicamentos"
       intro={[
         "Brindamos el servicio de administración endovenosa o subcutánea de medicamentos biológicos, anticuerpos monoclonales y otras drogas que por su complejidad requieren una administración especializada y supervisión médica.",

@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Certificado Escolar"
       summary="Apto médico escolar para personas en edad escolar y para instituciones educativas que necesitan operativos en domicilio."
-      heroImage="/images/servicios-medicos-generales/certificado-medico-smg.jpg"
+      heroImage="/images/servicios-medicos-generales/certificado-escolar-nuevo.jpg"
       heroAlt="Certificado escolar"
       intro={[
         "En Consultora CIS ofrecemos la posibilidad de realizar el apto médico para todas las personas en edad escolar y de todos los niveles educativos.",

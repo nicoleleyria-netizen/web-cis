@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Telemedicina"
       summary="Teleconsultas médicas online y seguimiento profesional para continuar la atención desde casa."
-      heroImage="/images/servicios-medicos-generales/asesoramiento-nutricional.jpeg"
+      heroImage="/images/servicios-medicos-generales/telemedicina-nuevo.jpg"
       heroAlt="Telemedicina"
       intro={[
         "La telemedicina brinda mayor eficiencia en la gestión de la demanda, reducción de tiempos de estancia hospitalaria y mejor manejo de los tiempos del paciente.",

@@ -145,47 +145,41 @@ const certificadosAptitud = [
 export default function ServiciosMedicosClientPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
-        <Image
-          src="/images/servicios-medicos-generales/servicios-medicos-generales.png"
-          alt="Servicios Médicos Generales"
-          fill
-          className="object-cover opacity-20"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80" />
-        <div className="container relative z-10 mx-auto grid gap-10 px-4 lg:grid-cols-2 lg:px-8">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Servicios Médicos Generales
+      <section className="relative bg-primary py-16 lg:py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div className="text-center lg:text-left">
+              <h1 className="mb-4 text-4xl font-bold text-primary-foreground md:text-5xl text-balance">
+                Servicios Médicos Generales
+              </h1>
+              <p className="mb-6 text-lg text-primary-foreground/80 text-pretty">
+                Brindamos una amplia oferta de servicios relacionados con la salud, en consultorios y domicilios, sin internación.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+                <Link
+                  href="/turnos-online"
+                  className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
+                >
+                  Solicitar Turno
+                </Link>
+                <a
+                  href="https://misaludmedica.com/Home.html?institution=cis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md bg-sky-600 px-5 py-3 font-semibold text-white hover:bg-sky-700"
+                >
+                  Portal Paciente
+                </a>
+              </div>
             </div>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-5xl xl:text-6xl text-balance">
-              Consultora CIS es una empresa que brinda una amplia oferta de servicios relacionados con la salud, en consultorios y domicilios, sin internación.
-            </h1>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              {bannerButtons.map((button) => (
-                <Button key={button.text} asChild size="lg" variant={button.variant} className="shadow-lg">
-                  {button.external ? (
-                    <a href={button.href} target="_blank" rel="noopener noreferrer">
-                      {button.text}
-                    </a>
-                  ) : (
-                    <Link href={button.href}>{button.text}</Link>
-                  )}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          <div className="self-center rounded-3xl border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur-sm">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-video overflow-hidden rounded-xl">
               <Image
-                src="/images/servicios-medicos-generales/servicios-medicos-generales.png"
-                alt="Consultora CIS servicios médicos generales"
+                src="/images/servicios-medicos-generales/banner-servicios-medicos-generales.jpg"
+                alt="Servicios médicos generales en Córdoba"
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

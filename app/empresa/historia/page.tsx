@@ -77,10 +77,10 @@ export default function HistoriaPage() {
                 profesionales para satisfacer las crecientes necesidades de nuestros clientes.
               </p>
             </div>
-            <div className="relative aspect-video overflow-hidden rounded-xl bg-white p-4">
+            <div className="relative aspect-video overflow-hidden rounded-xl">
               <Image
-                src="/images/sis-real/reunion-equipo.jpg"
-                alt="Equipo institucional de Consultora CIS"
+                src="/images/sis-real/nuestra-historia-como-comenzamos.jpg"
+                alt="Cómo comenzamos - Consultora CIS"
                 fill
                 className="object-cover"
                 priority

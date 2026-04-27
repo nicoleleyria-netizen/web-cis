@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Laboratorio de Análisis Clínicos"
       summary="Laboratorio con amplia experiencia, calidad controlada y resultados en tiempos adecuados para cada estudio."
-      heroImage="/images/servicios-medicos-generales/consultas-medicas.png"
+      heroImage="/images/servicios-medicos-generales/laboratorio-analisis-clinicos-nuevo.jpg"
       heroAlt="Laboratorio de análisis clínicos"
       intro={[
         "Nuestro laboratorio de análisis clínicos está gestionado por profesionales con amplia experiencia y capacitación, quienes brindan servicios desde hace 20 años.",

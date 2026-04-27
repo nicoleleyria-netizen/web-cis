@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Chequeo Médico Preventivo"
       summary="Evaluación integral para detectar a tiempo enfermedades o riesgos potenciales de desarrollarlas."
-      heroImage="/images/sis-real/reunion-equipo.jpg"
+      heroImage="/images/servicios-medicos-generales/chequeo-medico-preventivo-nuevo.jpg"
       heroAlt="Chequeo médico preventivo"
       intro={[
         "Descubrir a tiempo cualquier enfermedad, o conocer si existen riesgos potenciales de desarrollarla, nos da mejores expectativas para su tratamiento.",

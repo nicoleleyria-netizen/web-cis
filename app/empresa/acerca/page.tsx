@@ -144,25 +144,26 @@ export default function AcercaPage() {
               <li>Equipo interdisciplinario con múltiples enfoques</li>
             </ul>
             <p className="font-medium mb-2">Nuestro cliente busca una solución:</p>
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="space-y-1">
               {atributos.map((a) => (
-                <span key={a} className="rounded-full border bg-primary/10 px-3 py-2 text-center text-sm font-medium text-foreground">
-                  {a}
-                </span>
+                <li key={a} className="flex items-center gap-2 text-muted-foreground">
+                  <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-primary" />
+                  <span>{a}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div className="rounded-xl border bg-card p-6">
             <h3 className="text-2xl font-bold mb-3">Áreas de servicio</h3>
-            <div className="grid gap-3 md:grid-cols-3">
-              <Link className="rounded-lg border border-teal-600 bg-teal-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-teal-700" href="/medicina-laboral">
+            <div className="flex flex-col gap-3">
+              <Link className="w-full rounded-lg border border-teal-600 bg-teal-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-teal-700" href="/medicina-laboral">
                 Medicina Laboral
               </Link>
-              <Link className="rounded-lg border border-sky-600 bg-sky-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-sky-700" href="/servicios-medicos-generales">
+              <Link className="w-full rounded-lg border border-sky-600 bg-sky-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-sky-700" href="/servicios-medicos-generales">
                 Servicios Médicos Generales
               </Link>
-              <Link className="rounded-lg border border-cyan-700 bg-cyan-700 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-cyan-800" href="/medicina-del-deporte">
+              <Link className="w-full rounded-lg border border-cyan-700 bg-cyan-700 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-cyan-800" href="/medicina-del-deporte">
                 Medicina del Deporte
               </Link>
             </div>

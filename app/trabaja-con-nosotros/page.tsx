@@ -85,7 +85,7 @@ export default function TrabajaConNosotrosPage() {
             </div>
             <div className="relative aspect-square overflow-hidden rounded-xl lg:aspect-[4/3]">
               <Image
-                src="/images/sis-real/equipo-trabajo-cis.jpg"
+                src="/images/sis-real/trabaja-con-nosotros.jpg"
                 alt="Equipo de trabajo en Consultora CIS"
                 fill
                 className="object-cover"
@@ -110,12 +110,6 @@ export default function TrabajaConNosotrosPage() {
         </div>
       </section>
 
-      <CTASection
-        title="¿Tienes preguntas?"
-        description="No dudes en contactarnos si tienes alguna consulta sobre oportunidades laborales."
-        primaryCTA={{ text: "Contactar", href: "/contacto" }}
-        whatsappCTA={true}
-      />
     </>
   )
 }

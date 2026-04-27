@@ -2,9 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "@/components/base-path-image"
 import { Activity, ChevronRight, ShieldCheck, Stethoscope } from "lucide-react"
-import { CTASection } from "@/components/cta-section"
 import { SectionHeader } from "@/components/section-header"
-import { StudyTurnoForm } from "@/components/studies/study-turno-form"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
@@ -23,6 +21,19 @@ export const metadata: Metadata = {
 }
 
 const servicios = [
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "EMMAC",
+    href: "/medicina-del-deporte/emmac",
+    description:
+      "Examen Médico de Mediana y Alta Competencia, obligatorio según normativa provincial.",
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Aptos Médicos Deportivos",
+    href: "/medicina-del-deporte/apto-medico-deportivo",
+    description: "Chequeo preventivo y certificado válido para clubes e instituciones deportivas.",
+  },
   {
     icon: <Stethoscope className="h-6 w-6" />,
     title: "Atención Médica Especialistas",
@@ -48,19 +59,6 @@ const servicios = [
     title: "Aptitud Médica para ingresos a IPEF y otros terciarios",
     description: "Aptitud médica para ingresos con evaluación integral y certificación.",
   },
-  {
-    icon: <ShieldCheck className="h-6 w-6" />,
-    title: "EMMAC",
-    href: "/medicina-del-deporte/emmac",
-    description:
-      "Examen Médico de Mediana y Alta Competencia, obligatorio según normativa provincial.",
-  },
-  {
-    icon: <ShieldCheck className="h-6 w-6" />,
-    title: "Aptos Médicos Deportivos",
-    href: "/medicina-del-deporte/apto-medico-deportivo",
-    description: "Chequeo preventivo y certificado válido para clubes e instituciones deportivas.",
-  },
 ]
 
 const coberturas = [
@@ -74,13 +72,7 @@ const coberturas = [
     icon: <ShieldCheck className="h-6 w-6" />,
     title: "Cobertura Médica y Paramédica en Clubes e Instituciones",
     href: "/medicina-del-deporte/cobertura-medica-paramedica-clubes-instituciones",
-    description: "Equipos médicos y paramédicos para eventos, entrenamientos y temporadas.",
-  },
-  {
-    icon: <ShieldCheck className="h-6 w-6" />,
-    title: "Cobertura Médica en Piletas",
-    href: "/medicina-del-deporte/cobertura-medica-paramedica-clubes-instituciones",
-    description: "Deriva a la cobertura médica y paramédica para clubes, instituciones y temporada de piletas.",
+    description: "Equipos médicos y paramédicos para eventos, entrenamientos, temporadas y piletas.",
   },
 ]
 
@@ -112,7 +104,7 @@ export default function MedicinaDelDeportePage() {
       <section className="relative bg-primary py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div>
+            <div className="text-center lg:text-left">
               <h1 className="mb-4 text-4xl font-bold text-primary-foreground md:text-5xl text-balance">
                 Medicina del Deporte
               </h1>
@@ -120,7 +112,7 @@ export default function MedicinaDelDeportePage() {
                 Ofrecemos atención a deportistas y brindamos servicios de gestión de salud a clubes, instituciones y
                 empresas del ámbito del deporte.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
                 <Link
                   href="/turnos-online"
                   className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
@@ -128,26 +120,18 @@ export default function MedicinaDelDeportePage() {
                   Solicitar Turno
                 </Link>
                 <a
-                  href="https://misaludmedica.com/Companies.html?institution=cis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-700"
-                >
-                  Portal empresa
-                </a>
-                <a
                   href="https://misaludmedica.com/Home.html?institution=cis"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-md bg-sky-600 px-5 py-3 font-semibold text-white hover:bg-sky-700"
                 >
-                  Portal persona
+                  Portal Paciente
                 </a>
               </div>
             </div>
             <div className="relative aspect-video overflow-hidden rounded-xl">
               <Image
-                src="/images/medicina-del-deporte/hero.png"
+                src="/images/medicina-del-deporte/banner-medicina-del-deporte.jpg"
                 alt="Evaluación médica deportiva profesional para atletas"
                 fill
                 className="object-cover"
@@ -155,39 +139,6 @@ export default function MedicinaDelDeportePage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-4 lg:py-8">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="rounded-xl border bg-card p-6 space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              En Consultora CIS, ofrecemos atención a deportistas y brindamos servicios de gestión de salud a clubes,
-              instituciones y empresas del ámbito del deporte.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Nos especializamos en servicios de aptitud deportiva, para todas las disciplinas y niveles.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Creemos que la prevención de la enfermedad es la mejor herramienta.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Contamos con especialistas en el tratamiento de patologías derivadas del deporte, y asociadas al mismo.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Es nuestro objetivo lograr que el deportista realice su actividad en un entorno seguro; en el caso de
-              que detectemos una patología, la misma será tratada y acompañaremos a la persona en el proceso, hasta
-              lograr su reinserción.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Disponemos de métodos de diagnóstico complementarios para que realice su consulta en un solo lugar,
-              optimizando tiempos y costos.
-            </p>
-            <p className="font-semibold">
-              Nuestro plantel de profesionales cuenta con médicos habilitados para realizar EMMAC en Córdoba (Exámenes
-              Médicos Obligatorios dependientes de la Secretaría de Deportes de la provincia de Córdoba).
-            </p>
           </div>
         </div>
       </section>
@@ -299,10 +250,10 @@ export default function MedicinaDelDeportePage() {
       <section className="bg-secondary py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
-            title="Cobertura de Salud para Deportistas"
-            description="Segunda parte: servicios de cobertura y gestión médica para clubes, instituciones y eventos deportivos."
+            title="Servicios de Salud para deportistas, clubes, instituciones y empresas del deporte"
+            description="Coberturas y gestión médica integral para clubes, instituciones y eventos deportivos."
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {coberturas.map((servicio) => (
               <Link
                 key={servicio.title}
@@ -325,19 +276,6 @@ export default function MedicinaDelDeportePage() {
         </div>
       </section>
 
-      <section className="py-10 lg:py-12">
-        <div className="container mx-auto px-4 lg:px-8 max-w-2xl">
-          <StudyTurnoForm estudio="Medicina del Deporte" />
-        </div>
-      </section>
-
-      <CTASection
-        title="¿Necesitás habilitar tu práctica o cobertura deportiva?"
-        description="Podés coordinar desde Solicitar Turno, WhatsApp o formulario de contacto."
-        primaryCTA={{ text: "Solicitar Turno", href: "/turnos-online" }}
-        secondaryCTA={{ text: "Formulario de contacto", href: "/contacto" }}
-        whatsappCTA
-      />
     </>
   )
 }

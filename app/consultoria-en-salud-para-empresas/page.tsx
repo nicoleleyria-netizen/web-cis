@@ -65,8 +65,8 @@ export default function ConsultoriaEmpresasPage() {
             </div>
             <div className="relative aspect-video overflow-hidden rounded-xl">
               <Image
-                src="/corporate-health-consulting-business-meeting-welln.jpg"
-                alt="Consultoría en Salud para Empresas"
+                src="/images/sis-real/reunion-equipo.jpg"
+                alt="Consultoría en Salud para Empresas - Consultora CIS"
                 fill
                 className="object-cover"
               />

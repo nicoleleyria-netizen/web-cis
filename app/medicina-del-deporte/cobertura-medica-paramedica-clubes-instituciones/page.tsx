@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Cobertura Médica y Paramédica en Clubes e Instituciones"
       summary="Presencia activa de equipos médicos o paramédicos durante actividades deportivas, eventos y temporadas de piletas."
-      heroImage="/images/medicina-del-deporte/cobertura-medica-clubes-instituciones-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/cobertura-medica-paramedica-nuevo.jpg"
       heroAlt="Cobertura médica y paramédica en clubes e instituciones"
       intro={[
         "Si su institución o empresa requiere de la presencia activa en el predio de equipos médicos o paramédicos mientras se desarrolla la actividad deportiva, podemos ayudarlo.",

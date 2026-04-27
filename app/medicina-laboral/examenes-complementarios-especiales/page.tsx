@@ -11,7 +11,7 @@ export default function Page() {
     <StudyPage
       titulo="Exámenes Complementarios Especiales"
       resumen="Estudios específicos solicitados según perfil de puesto, riesgo y criterio médico ocupacional."
-      image="/images/medicina-laboral/asesoramiento-salud-ocupacional.png"
+      image="/images/medicina-laboral/examenes-complementarios-especiales-nuevo.jpg"
       imageAlt="Exámenes complementarios especiales"
       descripcion={[
         "Se indican cuando la evaluación ocupacional requiere información adicional para definir aptitud.",

@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Fichaje de Rugby (UAR)"
       summary="Servicio orientado a los requerimientos del Rugby Nacional para habilitación anual del jugador."
-      heroImage="/images/medicina-del-deporte/fichaje-rugby-uar-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/fichaje-rugby-uar-nuevo.jpg"
       heroAlt="Fichaje de Rugby UAR"
       intro={[
         "En Consultora CIS brindamos este servicio destinado específicamente a los requerimientos especiales del Rugby Nacional, que están centralizados en la Unión Argentina de Rugby, bajo altos estándares de control que permiten desempeñarse en este deporte de contacto minimizando riesgos.",

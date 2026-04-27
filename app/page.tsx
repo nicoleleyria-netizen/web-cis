@@ -13,19 +13,19 @@ const services = [
     title: "Medicina Laboral",
     description: "Exámenes preocupacionales, periódicos, y servicios de salud ocupacional para empresas.",
     href: "/medicina-laboral",
-    image: "/images/sis-real/medicina-laboral-real.jpg",
+    image: "/images/medicina-laboral/banner-2-medicina-laboral.jpg",
   },
   {
     title: "Servicios Médicos Generales",
     description: "Atención médica integral con profesionales en múltiples especialidades.",
     href: "/servicios-medicos-generales",
-    image: "/images/sis-real/consultorio-detalle.jpg",
+    image: "/images/servicios-medicos-generales/banner-2-servicios-medicos-generales.jpg",
   },
   {
     title: "Medicina del Deporte",
     description: "Exámenes de aptitud física, EMMAC y asesoramiento para deportistas.",
     href: "/medicina-del-deporte",
-    image: "/images/medicina-del-deporte/cobertura-salud-deportista-mdd.jpg",
+    image: "/images/medicina-del-deporte/banner-2-medicina-del-deporte.jpg",
   },
 ]
 

@@ -11,7 +11,7 @@ export default function Page() {
     <StudyPage
       titulo="Exámenes para Trabajo en Altura / Altitud"
       resumen="Aptitud médica para tareas en altura física o geográfica según exigencias y normativa de seguridad."
-      image="/images/sis-real/reunion-equipo.jpg"
+      image="/images/medicina-laboral/examenes-altura-altitud-nuevo.jpg"
       imageAlt="Exámenes para trabajo en altura o altitud"
       descripcion={[
         "Evalúa condiciones cardiovasculares, respiratorias y neurológicas vinculadas al trabajo en altura.",

@@ -11,9 +11,7 @@ import {
   ShieldCheck,
   ChevronDown,
   ArrowRight,
-  MousePointer,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const servicios = [
   {
@@ -98,24 +96,50 @@ export default function MedicinaLaboralClientPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative flex h-[60vh] min-h-[400px] items-center justify-center overflow-hidden">
-        <Image
-          src="/images/medicina-laboral/atencion-medica.png"
-          alt="Equipo médico profesional especializado en medicina laboral y salud ocupacional"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">Medicina Laboral</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80 sm:text-xl">
-            Soluciones integrales en salud ocupacional para empresas
-          </p>
-        </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <MousePointer className="h-6 w-6 text-white/70" />
+      <section className="relative bg-primary py-16 lg:py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div className="text-center lg:text-left">
+              <h1 className="mb-4 text-4xl font-bold text-primary-foreground md:text-5xl text-balance">
+                Medicina Laboral
+              </h1>
+              <p className="mb-6 text-lg text-primary-foreground/80 text-pretty">
+                Desde hace 18 años acompañamos a las empresas en la gestión de la salud y bienestar de sus empleados, ofreciendo un servicio de medicina integral.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+                <Link
+                  href="/turnos-online"
+                  className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
+                >
+                  Solicitar Turno
+                </Link>
+                <a
+                  href="https://misaludmedica.com/Companies.html?institution=cis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-700"
+                >
+                  Portal Empresa
+                </a>
+                <Link
+                  href="/contacto"
+                  className="inline-flex items-center justify-center rounded-md bg-white/20 border border-white/40 px-5 py-3 font-semibold text-white hover:bg-white/30"
+                >
+                  Hacé tu consulta
+                </Link>
+              </div>
+            </div>
+            <div className="relative aspect-video overflow-hidden rounded-xl">
+              <Image
+                src="/images/medicina-laboral/banner-medicina-laboral.jpg"
+                alt="Equipo médico profesional especializado en medicina laboral y salud ocupacional"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -220,25 +244,14 @@ export default function MedicinaLaboralClientPage() {
             >
               Portal Empresas
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Objective Section */}
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-2xl font-bold sm:text-3xl">Nuestro Objetivo</h2>
-            <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90">
-              En CIS, nuestro objetivo es brindar un servicio integral de salud ocupacional que permita a las empresas
-              cumplir con la normativa vigente, mientras cuidamos la salud de sus trabajadores de manera preventiva y
-              eficiente.
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/contacto">Solicitar información</Link>
-              </Button>
-            </div>
+            <a
+              href="https://misaludmedica.com/Home.html?institution=cis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-sky-600 px-5 py-3 font-semibold text-white hover:bg-sky-700"
+            >
+              Portal Personas
+            </a>
           </div>
         </div>
       </section>

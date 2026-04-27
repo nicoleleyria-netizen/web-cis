@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Cobertura de Salud para Deportistas"
       summary="Planes de cobertura y seguros de salud para clubes e instituciones con seguimiento médico personalizado."
-      heroImage="/images/medicina-del-deporte/cobertura-salud-deportista-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/cobertura-salud-deportistas-nuevo.jpg"
       heroAlt="Cobertura de salud para deportistas"
       intro={[
         "Consultora Integral de Salud dispone de planes de cobertura y seguros de salud para clubes e instituciones.",

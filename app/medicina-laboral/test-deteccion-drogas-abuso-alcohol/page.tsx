@@ -11,7 +11,7 @@ export default function Page() {
     <StudyPage
       titulo="Test de Detección de Drogas y Abuso de Alcohol"
       resumen="Evaluación toxicológica para contextos laborales que requieren controles específicos de seguridad."
-      image="/images/sis-real/recepcion-espera.jpg"
+      image="/images/medicina-laboral/test-deteccion-drogas-nuevo.jpg"
       imageAlt="Test de detección de drogas y alcohol"
       descripcion={[
         "Se aplica en procesos preocupacionales, controles periódicos o situaciones definidas por protocolo.",
