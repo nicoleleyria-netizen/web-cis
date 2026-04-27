@@ -1,11 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { Activity, ArrowRight, ChevronRight, FileText, FlaskConical, HeartPulse, Pill, Stethoscope, Video } from "lucide-react"
+import { Activity, ArrowRight, ChevronRight, FileText, FlaskConical, HeartPulse, List, Pill, Stethoscope, Video } from "lucide-react"
 import Image from "@/components/base-path-image"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { PostCard } from "@/components/post-card"
+import { TurneroButton } from "@/components/turnero-button"
 
 const servicios = [
   {
@@ -158,19 +159,17 @@ export default function ServiciosMedicosClientPage() {
                 Brindamos una amplia oferta de servicios relacionados con la salud, en consultorios y domicilios, sin internación.
               </p>
               <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-                <Link
-                  href="/turnos-online"
-                  className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
-                >
-                  Solicitar Turno
-                </Link>
+                <TurneroButton className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 disabled:opacity-70" />
                 <a
-                  href="https://misaludmedica.com/Home.html?institution=cis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md bg-sky-600 px-5 py-3 font-semibold text-white hover:bg-sky-700"
+                  href="#nuestros-servicios"
+                  className="inline-flex items-center gap-3 rounded-md bg-white/20 border border-white/40 px-4 py-3 font-semibold text-white hover:bg-white/30"
                 >
-                  Portal Paciente
+                  <List className="h-5 w-5 flex-shrink-0" />
+                  <span className="flex flex-col text-left">
+                    <span className="text-sm font-semibold leading-tight">Más servicios</span>
+                    <span className="text-xs font-normal opacity-80 leading-tight">Atajo al listado</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
                 </a>
               </div>
             </div>
@@ -210,7 +209,7 @@ export default function ServiciosMedicosClientPage() {
             </div>
           </div>
 
-          <div className="mt-14">
+          <div id="nuestros-servicios" className="mt-14">
             <div className="mb-10 text-center">
               <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Nuestros Servicios</h2>
               <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">

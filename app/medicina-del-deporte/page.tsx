@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "@/components/base-path-image"
-import { Activity, ChevronRight, ShieldCheck, Stethoscope } from "lucide-react"
+import { Activity, ArrowRight, ChevronRight, List, ShieldCheck, Stethoscope } from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { TurneroButton } from "@/components/turnero-button"
 
 export const metadata: Metadata = {
   title: "Medicina del Deporte - EMMAC, aptitud y cobertura deportiva",
@@ -113,19 +114,17 @@ export default function MedicinaDelDeportePage() {
                 empresas del ámbito del deporte.
               </p>
               <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-                <Link
-                  href="/turnos-online"
-                  className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"
-                >
-                  Solicitar Turno
-                </Link>
+                <TurneroButton className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 disabled:opacity-70" />
                 <a
-                  href="https://misaludmedica.com/Home.html?institution=cis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md bg-sky-600 px-5 py-3 font-semibold text-white hover:bg-sky-700"
+                  href="#nuestros-servicios"
+                  className="inline-flex items-center gap-3 rounded-md bg-white/20 border border-white/40 px-4 py-3 font-semibold text-white hover:bg-white/30"
                 >
-                  Portal Paciente
+                  <List className="h-5 w-5 flex-shrink-0" />
+                  <span className="flex flex-col text-left">
+                    <span className="text-sm font-semibold leading-tight">Más servicios</span>
+                    <span className="text-xs font-normal opacity-80 leading-tight">Atajo al listado</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
                 </a>
               </div>
             </div>
@@ -144,7 +143,7 @@ export default function MedicinaDelDeportePage() {
       </section>
 
       {/* Servicios */}
-      <section className="py-16 lg:py-24">
+      <section id="nuestros-servicios" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Nuestros Servicios"
