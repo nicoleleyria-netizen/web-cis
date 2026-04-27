@@ -14,12 +14,41 @@ export default function Page() {
       image="/images/medicina-laboral/test-deteccion-drogas-nuevo.jpg"
       imageAlt="Test de detección de drogas y alcohol"
       descripcion={[
-        "Se aplica en procesos preocupacionales, controles periódicos o situaciones definidas por protocolo.",
-        "El procedimiento se realiza con cadena de custodia y criterios de confidencialidad.",
-        "Brinda información objetiva para decisiones de salud ocupacional y prevención de riesgos.",
+        "Los test de detección de drogas y/o alcohol son una herramienta importante para identificar casos de consumo en situaciones que pueden resultar riesgosas, tanto para la persona que lo consume como para terceros que pueden verse afectados.",
+        "En la mayoría de los casos se utiliza este test en ámbitos de seguridad vial, en ámbitos laborales o de ingreso a un puesto laboral, o como evidencia legal.",
       ]}
-      incluye={["Toma de muestra", "Procesamiento y validación", "Informe de resultados"]}
-      requisitos={["DNI", "Ayuno si se solicita", "Condiciones de muestra según protocolo"]}
+      sections={[
+        {
+          title: "¿Por qué realizarlo?",
+          content: (
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>
+                El test en el trabajo es fundamental para garantizar un entorno laboral seguro y productivo. El
+                consumo de sustancias puede afectar la concentración, los reflejos y la toma de decisiones,
+                incrementando el riesgo de accidentes y errores.
+              </p>
+              <p>
+                Implementar estos controles ayuda a prevenir incidentes, proteger la salud de los empleados y
+                mantener altos estándares de seguridad. Además, promueve una cultura de responsabilidad y bienestar,
+                donde cada trabajador es consciente de la importancia de estar en condiciones óptimas para
+                desempeñar sus funciones.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: "¿Cómo se realiza?",
+          content: (
+            <ul className="grid gap-2 sm:grid-cols-3">
+              {["Test de alcohol en sangre", "Test de alcohol en aliento", "Test de drogas en orina"].map((item) => (
+                <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ),
+        },
+      ]}
     />
   )
 }

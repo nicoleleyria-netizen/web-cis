@@ -205,7 +205,6 @@ export default function MedicinaDelDeportePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
             <h2 className="text-3xl font-bold text-foreground">Atención Médica Especialistas</h2>
-            <p className="mt-3 text-muted-foreground">Desplegá las especialidades vinculadas a medicina del deporte.</p>
             <Accordion type="multiple" className="mt-6">
               <AccordionItem value="especialistas-mdd">
                 <AccordionTrigger>Ver especialidades</AccordionTrigger>
@@ -228,7 +227,6 @@ export default function MedicinaDelDeportePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-6 lg:p-8">
             <h2 className="text-3xl font-bold text-foreground">Exámenes Complementarios</h2>
-            <p className="mt-3 text-muted-foreground">Estudios diagnósticos disponibles en el circuito de medicina del deporte.</p>
             <Accordion type="multiple" className="mt-6">
               <AccordionItem value="examenes-mdd">
                 <AccordionTrigger>Ver opciones disponibles</AccordionTrigger>
@@ -276,6 +274,29 @@ export default function MedicinaDelDeportePage() {
         </div>
       </section>
 
+      {/* Portales */}
+      <section className="py-8 lg:py-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="rounded-xl border bg-card p-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+            <a
+              href="https://misaludmedica.com/Companies.html?institution=cis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Portal Empresas
+            </a>
+            <a
+              href="https://misaludmedica.com/Home.html?institution=cis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-sky-600 px-5 py-3 font-semibold text-white hover:bg-sky-700"
+            >
+              Portal Personas
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -1,7 +1,10 @@
+import type { ReactNode } from "react"
 import Image from "@/components/base-path-image"
 import { StudyTurnoForm } from "@/components/studies/study-turno-form"
 import { CTASection } from "@/components/cta-section"
 import { MoreServicesButton } from "@/components/studies/more-services-button"
+
+type Section = { title: string; content: ReactNode }
 
 type Props = {
   titulo: string
@@ -11,9 +14,10 @@ type Props = {
   descripcion: string[]
   incluye?: string[]
   requisitos?: string[]
+  sections?: Section[]
 }
 
-export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, incluye = [], requisitos = [] }: Props) {
+export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, incluye = [], requisitos = [], sections = [] }: Props) {
   return (
     <>
       <section className="bg-primary py-14">
@@ -67,6 +71,17 @@ export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, inclu
                   </ul>
                 </div>
               )}
+            </div>
+          )}
+
+          {sections.length > 0 && (
+            <div className="mt-6 space-y-6">
+              {sections.map((s) => (
+                <div key={s.title} className="rounded-xl border bg-card p-5">
+                  <h3 className="font-semibold mb-3">{s.title}</h3>
+                  {s.content}
+                </div>
+              ))}
             </div>
           )}
 
