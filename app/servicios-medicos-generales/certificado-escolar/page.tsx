@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Certificado Escolar"
       summary="Apto médico escolar para personas en edad escolar y para instituciones educativas que necesitan operativos en domicilio."
-      heroImage="/images/servicios-medicos-generales/certificado-medico-smg.jpg"
+      heroImage="/images/servicios-medicos-generales/certificado-escolar-nuevo.jpg"
       heroAlt="Certificado escolar"
       intro={[
         "En Consultora CIS ofrecemos la posibilidad de realizar el apto médico para todas las personas en edad escolar y de todos los niveles educativos.",
@@ -19,7 +19,7 @@ export default function Page() {
         "También ofrecemos el servicio para instituciones, con la posibilidad de realizar el examen en su propio domicilio si el número de alumnos lo justifica.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

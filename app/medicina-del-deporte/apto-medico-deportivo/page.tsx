@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Aptos Médicos Deportivos"
       summary="Chequeo preventivo para comenzar o continuar actividad física y deportiva con respaldo profesional."
-      heroImage="/images/medicina-del-deporte/aptos-medicos-deportivos-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/aptos-medicos-deportivos-nuevo.jpg"
       heroAlt="Aptos médicos deportivos"
       intro={[
         "En Consultora CIS brindamos este servicio destinado tanto a personas que desean comenzar a realizar ejercicios físicos o deportivos como a aquellas que ya los realizan regularmente.",
@@ -21,7 +21,7 @@ export default function Page() {
         "El certificado brindado es válido para clubes, gimnasios, instituciones deportivas y diversas prácticas deportivas.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

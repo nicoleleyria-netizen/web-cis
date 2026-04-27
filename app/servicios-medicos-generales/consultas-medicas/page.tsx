@@ -39,7 +39,7 @@ export default function Page() {
         "La atención se adapta al motivo de consulta, optimiza tiempos y busca acompañar cada caso con comunicación fluida y continuidad asistencial.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

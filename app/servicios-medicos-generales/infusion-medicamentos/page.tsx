@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Infusión de Medicamentos"
       summary="Centro ambulatorio para administración especializada de medicación con supervisión médica y confort asistencial."
-      heroImage="/images/sis-real/recepcion-espera.jpg"
+      heroImage="/images/servicios-medicos-generales/infusion-medicamentos-nuevo.jpg"
       heroAlt="Infusión de medicamentos"
       intro={[
         "Brindamos el servicio de administración endovenosa o subcutánea de medicamentos biológicos, anticuerpos monoclonales y otras drogas que por su complejidad requieren una administración especializada y supervisión médica.",
@@ -19,7 +19,7 @@ export default function Page() {
         "Nuestro centro se localiza fuera del ámbito hospitalario, priorizando el confort, la comodidad y la atención personalizada durante tratamientos prolongados.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

@@ -96,7 +96,7 @@ export default function InvestigacionClinicaPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative aspect-video overflow-hidden rounded-xl lg:order-2">
-              <Image src="/medical-research-team-laboratory-professionals.jpg" alt="Equipo de investigación" fill className="object-cover" />
+              <Image src="/images/sis-real/director-consultorio.jpg" alt="Equipo de investigación clínica" fill className="object-cover" />
             </div>
             <div>
               <h2 className="mb-6 text-3xl font-bold text-foreground">¿Cómo Participar?</h2>

@@ -35,7 +35,7 @@ export function ServiceInfoPage({
   sections = [],
   actions = [],
   bottomTitle = "¿Querés coordinar tu atención?",
-  bottomDescription = "Podés hacerlo por turno online, WhatsApp o desde la página de contacto.",
+  bottomDescription = "Podés hacerlo por solicitar turno, WhatsApp o desde la página de contacto.",
 }: ServiceInfoPageProps) {
   return (
     <>
@@ -45,11 +45,11 @@ export function ServiceInfoPage({
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80" />
         <div className="container relative mx-auto grid gap-8 px-4 lg:grid-cols-2 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl text-center lg:text-left">
             <h1 className="text-4xl font-bold tracking-tight text-primary-foreground md:text-5xl text-balance">{title}</h1>
             <p className="mt-4 text-lg text-primary-foreground/85 text-pretty">{summary}</p>
             {actions.length > 0 && (
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap justify-center lg:justify-start">
                 {actions.map((action) => (
                   <Button key={action.text} asChild variant={action.variant ?? "secondary"} size="lg">
                     {action.external ? (
@@ -89,7 +89,7 @@ export function ServiceInfoPage({
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href="/turnos-online">Turno online</Link>
+                  <Link href="/turnos-online">Solicitar Turno</Link>
                 </Button>
                 <Button asChild variant="outline" className="bg-transparent">
                   <a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">
@@ -119,7 +119,7 @@ export function ServiceInfoPage({
       <CTASection
         title={bottomTitle}
         description={bottomDescription}
-        primaryCTA={{ text: "Turno online", href: "/turnos-online" }}
+        primaryCTA={{ text: "Solicitar Turno", href: "/turnos-online" }}
         secondaryCTA={{ text: "Formulario de contacto", href: "/contacto" }}
         whatsappCTA
       />

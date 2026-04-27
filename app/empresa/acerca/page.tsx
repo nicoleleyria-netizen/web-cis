@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "@/components/base-path-image"
 import { CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Acerca de Nosotros",
@@ -22,6 +23,25 @@ const valores = [
 
 const atributos = ["Integral", "Eficiente", "Confiable", "Flexible", "Dinámica", "De calidad", "Seria", "Segura", "Honesta"]
 
+const redPrestadores = [
+  "CABA - Villa Crespo",
+  "Buenos Aires - Campana y Munro",
+  "Rosario",
+  "Mendoza",
+  "Salta",
+  "San Luis",
+  "Jujuy",
+  "Villa María",
+  "Río Cuarto",
+  "San Francisco - CBA",
+  "Tucumán",
+  "Río Grande - Tierra del Fuego",
+  "Comodoro Rivadavia - Chubut",
+  "Santiago del Estero",
+  "San Juan",
+  "Santa Fe",
+]
+
 export default function AcercaPage() {
   return (
     <main>
@@ -32,26 +52,21 @@ export default function AcercaPage() {
       </section>
 
       <section className="py-12 lg:py-16">
-        <div className="container mx-auto px-4 lg:px-8 grid gap-8 lg:grid-cols-2 items-center">
-          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border">
-            <Image src="/images/sis-real/nuestra-historia-timeline.jpg" alt="Nuestra Historia - línea de tiempo Consultora CIS" fill className="object-cover" />
-          </div>
-          <div className="space-y-5">
-            <div className="rounded-xl border bg-card p-5">
+        <div className="container mx-auto px-4 lg:px-8 grid gap-5">
+          <div className="rounded-xl border bg-card p-6 lg:p-8">
               <h2 className="text-2xl font-bold mb-2">Nuestra Misión</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Brindar soluciones integrales de salud a empresas, instituciones y personas en el ámbito provincial,
                 nacional e internacional, de manera personalizada y flexible, priorizando la calidad del servicio.
               </p>
-            </div>
-            <div className="rounded-xl border bg-card p-5">
+          </div>
+          <div className="rounded-xl border bg-card p-6 lg:p-8">
               <h2 className="text-2xl font-bold mb-2">Nuestra Visión</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Ser una empresa referente a nivel nacional e internacional en servicios de salud de calidad,
                 generadora de relaciones positivas y duraderas con nuestros clientes, buscando siempre la innovación en
                 nuestro trabajo.
               </p>
-            </div>
           </div>
         </div>
       </section>
@@ -72,27 +87,52 @@ export default function AcercaPage() {
 
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 lg:px-8 grid gap-8">
-          <div className="rounded-xl border bg-card p-6">
-            <h3 className="text-2xl font-bold mb-3">Ubicación y Cobertura</h3>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              Estamos situados en Córdoba Capital y contamos con cobertura a nivel nacional e internacional.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Somos integrantes de una red de prestadores de salud especializada en nuestros servicios, que brinda una
-              amplia cobertura en todo el país. Elegimos la mejor opción posible, basándonos en nuestra experiencia y
-              conocimientos, buscando un adecuado equilibrio entre calidad del servicio y costo.
-            </p>
+          <div className="rounded-xl border bg-card p-6 lg:p-8">
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-3">Ubicación y Cobertura</h3>
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  Estamos situados en Córdoba Capital y contamos con cobertura a nivel nacional e internacional.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Somos integrantes de una red de prestadores de salud especializada en nuestros servicios, que brinda
+                  una amplia cobertura en todo el país. Elegimos la mejor opción posible, basándonos en nuestra
+                  experiencia y conocimientos, buscando un adecuado equilibrio entre calidad del servicio y costo.
+                </p>
+              </div>
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30">
+                <Image src="/images/sis-real/mapa-red-prestadores.png" alt="Cobertura de red de prestadores de Consultora CIS" fill className="object-cover" />
+              </div>
+            </div>
           </div>
 
-          <div className="rounded-xl border bg-card p-6">
-            <h3 className="text-2xl font-bold mb-3">Servicio de Extremo a Extremo</h3>
-            <p className="mb-3 text-muted-foreground">Brindamos un servicio integral basado en:</p>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Diagnóstico claro y preciso de la necesidad del cliente</li>
-              <li>Diseño creativo y flexible de un proceso adecuado</li>
-              <li>Cumplimiento de los tiempos pautados</li>
-              <li>Inclusión de aspectos administrativos y logísticos</li>
-            </ul>
+          <div className="rounded-xl border bg-card p-6 lg:p-8">
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-3">Servicio de Extremo a Extremo</h3>
+                <p className="mb-3 text-muted-foreground">Brindamos un servicio integral basado en:</p>
+                <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                  <li>Diagnóstico claro y preciso de la necesidad del cliente</li>
+                  <li>Diseño creativo y flexible de un proceso adecuado</li>
+                  <li>Cumplimiento de los tiempos pautados</li>
+                  <li>Inclusión de aspectos administrativos y logísticos</li>
+                </ul>
+              </div>
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30">
+                <Image src="/images/sis-real/mapa-red-prestadores.png" alt="Cobertura nacional y logística de servicios CIS" fill className="object-cover" />
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border bg-card p-6 lg:p-8">
+            <h3 className="text-2xl font-bold mb-3">Red de prestadores</h3>
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {redPrestadores.map((item) => (
+                <div key={item} className="rounded-lg border bg-secondary/30 px-3 py-2 text-sm font-medium text-foreground">
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="rounded-xl border bg-card p-6">
@@ -104,31 +144,32 @@ export default function AcercaPage() {
               <li>Equipo interdisciplinario con múltiples enfoques</li>
             </ul>
             <p className="font-medium mb-2">Nuestro cliente busca una solución:</p>
-            <div className="flex flex-wrap gap-2">
+            <ul className="space-y-1">
               {atributos.map((a) => (
-                <span key={a} className="rounded-full border px-3 py-1 text-sm bg-secondary/50">
-                  {a}
-                </span>
+                <li key={a} className="flex items-center gap-2 text-muted-foreground">
+                  <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-primary" />
+                  <span>{a}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div className="rounded-xl border bg-card p-6">
             <h3 className="text-2xl font-bold mb-3">Áreas de servicio</h3>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link className="rounded-lg border px-4 py-2 hover:bg-primary/5 hover:border-primary/40" href="/medicina-laboral">
+            <div className="flex flex-col gap-3">
+              <Link className="w-full rounded-lg border border-teal-600 bg-teal-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-teal-700" href="/medicina-laboral">
                 Medicina Laboral
               </Link>
-              <Link className="rounded-lg border px-4 py-2 hover:bg-primary/5 hover:border-primary/40" href="/servicios-medicos-generales">
+              <Link className="w-full rounded-lg border border-sky-600 bg-sky-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-sky-700" href="/servicios-medicos-generales">
                 Servicios Médicos Generales
               </Link>
-              <Link className="rounded-lg border px-4 py-2 hover:bg-primary/5 hover:border-primary/40" href="/medicina-del-deporte">
+              <Link className="w-full rounded-lg border border-cyan-700 bg-cyan-700 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-cyan-800" href="/medicina-del-deporte">
                 Medicina del Deporte
               </Link>
             </div>
           </div>
 
-          <div className="rounded-xl border bg-card p-6">
+          <div className="rounded-xl border bg-card p-6 lg:p-8">
             <h3 className="text-2xl font-bold mb-3">Identidad de CIS</h3>
             <p className="text-muted-foreground leading-relaxed mb-3">
               Consultora CIS nace de la observación de sus fundadores sobre la necesidad de incorporar herramientas y
@@ -139,7 +180,14 @@ export default function AcercaPage() {
               prepagas, ART, Estado, empresas privadas), lo que genera espacios donde ciertas necesidades no están
               completamente cubiertas.
             </p>
-            <p className="font-semibold">La búsqueda de calidad en los servicios de salud es el motor principal de nuestro trabajo.</p>
+            <div className="flex flex-col gap-4 border-t pt-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="font-semibold">La búsqueda de calidad en los servicios de salud es el motor principal de nuestro trabajo.</p>
+              <Button asChild>
+                <a href="https://consultoracis.com.ar/articulo?id=53Iue79YwhS95uxGTWEN" target="_blank" rel="noopener noreferrer">
+                  Seguir leyendo
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

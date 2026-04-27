@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Telemedicina"
       summary="Teleconsultas médicas online y seguimiento profesional para continuar la atención desde casa."
-      heroImage="/images/servicios-medicos-generales/asesoramiento-nutricional.jpeg"
+      heroImage="/images/servicios-medicos-generales/telemedicina-nuevo.jpg"
       heroAlt="Telemedicina"
       intro={[
         "La telemedicina brinda mayor eficiencia en la gestión de la demanda, reducción de tiempos de estancia hospitalaria y mejor manejo de los tiempos del paciente.",
@@ -19,7 +19,7 @@ export default function Page() {
         "En CIS implementamos este servicio para posibilitar la continuidad de la atención médica desde su casa, sin perder calidad asistencial.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

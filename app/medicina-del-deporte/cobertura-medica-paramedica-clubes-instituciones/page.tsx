@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Cobertura Médica y Paramédica en Clubes e Instituciones"
       summary="Presencia activa de equipos médicos o paramédicos durante actividades deportivas, eventos y temporadas de piletas."
-      heroImage="/images/medicina-del-deporte/cobertura-medica-clubes-instituciones-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/cobertura-medica-paramedica-nuevo.jpg"
       heroAlt="Cobertura médica y paramédica en clubes e instituciones"
       intro={[
         "Si su institución o empresa requiere de la presencia activa en el predio de equipos médicos o paramédicos mientras se desarrolla la actividad deportiva, podemos ayudarlo.",
@@ -21,7 +21,7 @@ export default function Page() {
         "Envíenos su consulta a continuación y exponga su necesidad: con gusto crearemos un servicio personalizado para su satisfacción.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

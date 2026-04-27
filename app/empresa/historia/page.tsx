@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import Image from "@/components/base-path-image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Nuestra Historia - Trayectoria desde 2006",
@@ -11,7 +9,7 @@ export const metadata: Metadata = {
     title: "Nuestra Historia - Consultora CIS",
     description:
       "Desde 2006 brindando soluciones integrales de salud ocupacional en Argentina.",
-    images: ["/images/sis-real/equipo-trabajo-cis.jpg"],
+    images: ["/images/sis-real/reunion-equipo.jpg"],
   },
   alternates: {
     canonical: "/empresa/historia",
@@ -79,12 +77,12 @@ export default function HistoriaPage() {
                 profesionales para satisfacer las crecientes necesidades de nuestros clientes.
               </p>
             </div>
-            <div className="relative aspect-video overflow-hidden rounded-xl bg-white p-4">
+            <div className="relative aspect-video overflow-hidden rounded-xl">
               <Image
-                src="/images/logos/logo-cis-horizontal.png"
-                alt="Trayectoria y evolución de Consultora CIS a lo largo de 18 años"
+                src="/images/sis-real/nuestra-historia-como-comenzamos.jpg"
+                alt="Cómo comenzamos - Consultora CIS"
                 fill
-                className="object-contain"
+                className="object-cover"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -126,14 +124,6 @@ export default function HistoriaPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="container mx-auto px-4 text-center lg:px-8">
-          <Button asChild size="lg" variant="secondary">
-            <Link href="/trabaja-con-nosotros">Trabaja con nosotros</Link>
-          </Button>
         </div>
       </section>
     </>

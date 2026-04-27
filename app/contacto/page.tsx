@@ -116,7 +116,8 @@ export default function ContactoPage() {
             </div>
 
             <div>
-              <h2 className="mb-6 text-2xl font-bold text-foreground">Envíanos un mensaje</h2>
+              <h2 className="mb-2 text-2xl font-bold text-foreground">Hace tu consulta.</h2>
+              <p className="mb-6 text-sm text-muted-foreground">Te contactaremos a la brevedad.</p>
               <ContactForm />
             </div>
           </div>

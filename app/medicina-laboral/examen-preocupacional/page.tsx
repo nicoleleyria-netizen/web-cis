@@ -11,7 +11,7 @@ export default function Page() {
     <StudyPage
       titulo="Examen Preocupacional"
       resumen="Evaluación médica previa al ingreso laboral para determinar aptitud psicofísica de acuerdo con el puesto."
-      image="/images/sis-real/medicina-laboral-real.jpg"
+      image="/images/medicina-laboral/examen-preocupacional-nuevo.jpg"
       imageAlt="Examen preocupacional"
       descripcion={[
         "El examen preocupacional permite verificar la aptitud del postulante para tareas específicas del puesto de trabajo.",

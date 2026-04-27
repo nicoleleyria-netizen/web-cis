@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Laboratorio de Análisis Clínicos"
       summary="Laboratorio con amplia experiencia, calidad controlada y resultados en tiempos adecuados para cada estudio."
-      heroImage="/images/servicios-medicos-generales/consultas-medicas.png"
+      heroImage="/images/servicios-medicos-generales/laboratorio-analisis-clinicos-nuevo.jpg"
       heroAlt="Laboratorio de análisis clínicos"
       intro={[
         "Nuestro laboratorio de análisis clínicos está gestionado por profesionales con amplia experiencia y capacitación, quienes brindan servicios desde hace 20 años.",
@@ -19,7 +19,7 @@ export default function Page() {
         "Realizamos todos los análisis y determinaciones de baja y alta complejidad con extracciones realizadas por personal calificado y entrenado en bioseguridad.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

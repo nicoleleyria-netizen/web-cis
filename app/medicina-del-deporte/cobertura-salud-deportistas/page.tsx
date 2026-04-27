@@ -11,7 +11,7 @@ export default function Page() {
     <ServiceInfoPage
       title="Cobertura de Salud para Deportistas"
       summary="Planes de cobertura y seguros de salud para clubes e instituciones con seguimiento médico personalizado."
-      heroImage="/images/medicina-del-deporte/cobertura-salud-deportista-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/cobertura-salud-deportistas-nuevo.jpg"
       heroAlt="Cobertura de salud para deportistas"
       intro={[
         "Consultora Integral de Salud dispone de planes de cobertura y seguros de salud para clubes e instituciones.",
@@ -21,7 +21,7 @@ export default function Page() {
         "Envíenos su consulta a continuación y exponga su necesidad: con gusto crearemos un servicio personalizado para su satisfacción.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}

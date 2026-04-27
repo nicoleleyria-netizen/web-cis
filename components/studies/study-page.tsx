@@ -19,7 +19,7 @@ export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, inclu
       <section className="bg-primary py-14">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl text-center lg:text-left">
               <h1 className="text-3xl font-bold text-primary-foreground md:text-4xl">{titulo}</h1>
               <p className="mt-3 text-primary-foreground/85">{resumen}</p>
             </div>

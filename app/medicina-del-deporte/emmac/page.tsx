@@ -11,14 +11,14 @@ export default function Page() {
     <ServiceInfoPage
       title="EMMAC"
       summary="Examen Médico para Mediana y Alta Competencia, obligatorio para práctica deportiva según normativa provincial."
-      heroImage="/images/medicina-del-deporte/emmac-mdd.jpg"
+      heroImage="/images/medicina-del-deporte/emmac-nuevo.jpg"
       heroAlt="EMMAC en Consultora CIS"
       intro={[
         "Todos los estudios médicos que comprende el examen se realizan en nuestra Consultora y en un mismo turno.",
         "Contamos con un plantel de profesionales médicos habilitados para la realización del EMMAC.",
       ]}
       actions={[
-        { text: "Turno online", href: "/turnos-online" },
+        { text: "Solicitar Turno", href: "/turnos-online" },
         { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "secondary" },
         { text: "Formulario de contacto", href: "/contacto", variant: "outline" },
       ]}
