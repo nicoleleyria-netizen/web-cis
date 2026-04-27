@@ -1,31 +1,19 @@
 "use client"
 
 import Link from "next/link"
-import { Activity, Apple, ChevronRight, FileText, FlaskConical, HeartPulse, Home, Pill, Stethoscope, Syringe, Video } from "lucide-react"
+import { Activity, ArrowRight, ChevronRight, FileText, FlaskConical, HeartPulse, Pill, Stethoscope, Video } from "lucide-react"
 import Image from "@/components/base-path-image"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { CTASection } from "@/components/cta-section"
-
-const bannerButtons = [
-  { text: "Solicitar Turno", href: "/turnos-online", variant: "default" as const },
-  { text: "Portal empresa", href: "https://misaludmedica.com/Companies.html?institution=cis", external: true, variant: "secondary" as const },
-  { text: "Portal persona", href: "https://misaludmedica.com/Home.html?institution=cis", external: true, variant: "secondary" as const },
-]
+import { PostCard } from "@/components/post-card"
 
 const servicios = [
   {
     icon: Stethoscope,
     title: "Consultas Médicas",
     href: "#consultas-medicas",
-    description: "Medicina general, clínica médica, reumatología, traumatología y más.",
+    description: "Medicina general, clínica médica, reumatología, traumatología y más especialidades.",
     accordion: true,
-  },
-  {
-    icon: Pill,
-    title: "Infusión de Medicamentos",
-    href: "/servicios-medicos-generales/infusion-medicamentos",
-    description: "Centro ambulatorio para administración de medicación con supervisión médica.",
   },
   {
     icon: Activity,
@@ -47,6 +35,12 @@ const servicios = [
     description: "Análisis de baja y alta complejidad con trazabilidad y resultados confiables.",
   },
   {
+    icon: Pill,
+    title: "Infusión de Medicamentos",
+    href: "/servicios-medicos-generales/infusion-medicamentos",
+    description: "Centro ambulatorio para administración de medicación con supervisión médica.",
+  },
+  {
     icon: FileText,
     title: "Certificado Escolar",
     href: "/servicios-medicos-generales/certificado-escolar",
@@ -56,7 +50,7 @@ const servicios = [
     icon: Activity,
     title: "EMMAC",
     href: "/medicina-del-deporte/emmac",
-    description: "Examen deportivo derivado a la sección de Medicina del Deporte.",
+    description: "Examen Médico de Mediana y Alta Competencia, obligatorio según normativa provincial.",
   },
   {
     icon: FileText,
@@ -69,25 +63,31 @@ const servicios = [
     icon: Video,
     title: "Telemedicina",
     href: "/servicios-medicos-generales/telemedicina",
-    description: "Consultas online y seguimiento profesional remoto.",
+    description: "Consultas online con profesionales médicos desde cualquier lugar.",
+  },
+]
+
+const latestArticles = [
+  {
+    title: "Investigación y cuidado en esclerosis sistémica: la importancia del diagnóstico temprano",
+    excerpt: "La esclerosis sistémica es una de esas enfermedades que desafían tanto al cuerpo como a la ciencia. Poco frecuente, compleja y aún sin cura definitiva...",
+    slug: "investigacion-esclerosis-sistemica",
+    publishedAt: "2025-10-27",
+    categories: [{ title: "Investigación Clínica", slug: "investigacion-clinica" }, { title: "Salud en General", slug: "salud-en-general" }],
   },
   {
-    icon: Syringe,
-    title: "Vacunatorio",
-    href: "/servicios-medicos-generales/vacunatorio",
-    description: "Vacunación en consultorio o domicilio con control profesional.",
+    title: "Los 5 secretos de la caminata rápida: más beneficios en menos tiempo",
+    excerpt: "La caminata quizás sea la actividad más popular y accesible para todo el mundo a la hora de comenzar o mantener una rutina de ejercicio...",
+    slug: "secretos-caminata-rapida",
+    publishedAt: "2025-10-16",
+    categories: [{ title: "Medicina del Deporte", slug: "medicina-del-deporte" }, { title: "Salud en General", slug: "salud-en-general" }],
   },
   {
-    icon: Home,
-    title: "Servicios Médicos a Domicilio",
-    href: "/servicios-medicos-generales/servicios-medicos-domicilio",
-    description: "Atención médica y prácticas en domicilio para pacientes que lo requieran.",
-  },
-  {
-    icon: Apple,
-    title: "Asesoramiento Nutricional",
-    href: "/servicios-medicos-generales/asesoramiento-nutricional",
-    description: "Planes de alimentación y seguimiento nutricional personalizado.",
+    title: "Las 4A para gestionar el estrés: una estrategia práctica para la vida cotidiana",
+    excerpt: "Parece que la vida y nuestras rutinas cotidianas cada vez se hacen más pesadas, más rápidas, más demandantes...",
+    slug: "4a-gestionar-estres",
+    publishedAt: "2025-10-16",
+    categories: [{ title: "Medicina Laboral", slug: "medicina-laboral" }, { title: "Salud en General", slug: "salud-en-general" }],
   },
 ]
 
@@ -96,6 +96,7 @@ const consultasMedicas = [
   "Clínica médica",
   "Reumatología",
   "Traumatología",
+  "Osteología",
   "Medicina del deporte",
   "Cardiología",
   "Oftalmología",
@@ -109,6 +110,7 @@ const consultasMedicas = [
   "Ginecología",
   "Otorrinolaringología",
   "Dermatología",
+  "Endocrinología",
 ]
 
 const examenesComplementarios = [
@@ -339,12 +341,29 @@ export default function ServiciosMedicosClientPage() {
         </div>
       </section>
 
-      <CTASection
-        title="Atención integral en un solo lugar"
-        description="Coordiná tu atención desde Solicitar Turno, WhatsApp o contacto directo."
-        primaryCTA={{ text: "Solicitar Turno", href: "/turnos-online" }}
-        secondaryCTA={{ text: "Más sobre nuestra empresa", href: "/empresa/acerca" }}
-      />
+      <section className="py-16 lg:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Últimos Artículos</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Mantente informado con nuestras publicaciones sobre salud, medicina y bienestar.
+            </p>
+          </div>
+          <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {latestArticles.map((article) => (
+              <PostCard key={article.slug} {...article} />
+            ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link href="https://consultoracis.com.ar/blog" target="_blank" rel="noopener noreferrer">
+                Ver todos los artículos
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

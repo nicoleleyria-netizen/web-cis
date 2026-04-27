@@ -80,6 +80,52 @@ export default function Page() {
             </p>
           ),
         },
+        {
+          title: "Preguntas Frecuentes",
+          content: (
+            <div className="space-y-4">
+              {[
+                {
+                  q: "¿En qué consiste el trámite?",
+                  a: "Certificación de aptitud física por un profesional médico que habilita al jugador para la práctica de deportes sociales/comunitarios, federados y competencias escolares.",
+                },
+                {
+                  q: "¿A quién está dirigido?",
+                  a: "Jugadores, técnicos, árbitros, jueces, entrenadores, monitores y demás miembros de la comunidad deportiva según la disciplina, a partir de la instancia de iniciación deportiva.",
+                },
+                {
+                  q: "¿Cuándo es necesario realizarlo?",
+                  a: "Al comenzar la práctica de la disciplina deportiva y renovarse al año aniversario, es decir, vence en la misma fecha del año siguiente.",
+                },
+                {
+                  q: "¿Debo presentar algún formulario?",
+                  a: "No debe presentar ningún formulario.",
+                },
+                {
+                  q: "¿Cuáles son los requisitos?",
+                  a: "Concurrir munido del DNI. Los menores de edad deberán concurrir acompañados de padre, madre o tutor, ambos munidos de DNI. En caso de que se requiera laboratorio, debe concurrir en ayuno de 12 hs.",
+                },
+                {
+                  q: "¿Quiénes están habilitados para realizar el EMMAC?",
+                  a: "Únicamente los médicos efectores que figuran en el listado exhibido en la página web de la Agencia Córdoba Deportes. Ningún médico no habilitado por la agencia puede certificar la aptitud.",
+                },
+                {
+                  q: "¿Qué comprobante recibo?",
+                  a: "Certificado de aptitud física para la práctica deportiva válido en ámbitos sociales, federados y educativos de la provincia de Córdoba.",
+                },
+                {
+                  q: "¿Puede el médico efector requerir más estudios antes de dar el apto definitivo?",
+                  a: "De existir algún impedimento, el médico efector solicitará estudios complementarios. Una vez cumplimentados y de corresponder, se otorgará el apto definitivo.",
+                },
+              ].map(({ q, a }) => (
+                <div key={q} className="rounded-lg border bg-background p-4">
+                  <p className="font-semibold text-foreground">{q}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{a}</p>
+                </div>
+              ))}
+            </div>
+          ),
+        },
       ]}
     />
   )

@@ -31,26 +31,12 @@ export default function Page() {
               {[
                 "Teleconsultas médicas online",
                 "Recetas médicas digitales",
-                "Seguimiento profesional remoto",
-                "Atención continua desde casa",
               ].map((item) => (
                 <li key={item} className="rounded-lg border bg-background px-3 py-2 text-sm text-foreground">
                   {item}
                 </li>
               ))}
             </ul>
-          ),
-        },
-        {
-          title: "Artículo relacionado",
-          content: (
-            <p>
-              ¿Te interesa el tema? Leé este artículo sobre{' '}
-              <a className="font-medium text-primary underline-offset-4 hover:underline" href="https://consultoracis.com.ar/servicios-medicos/articulos/que-es-la-telemedicina/" target="_blank" rel="noopener noreferrer">
-                Telemedicina
-              </a>
-              .
-            </p>
           ),
         },
       ]}

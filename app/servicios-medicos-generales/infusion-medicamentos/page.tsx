@@ -44,35 +44,6 @@ export default function Page() {
             </ul>
           ),
         },
-        {
-          title: "Exámenes Complementarios",
-          content: (
-            <details className="rounded-lg border bg-background p-4">
-              <summary className="cursor-pointer font-medium text-foreground">Ver opciones disponibles</summary>
-              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                {[
-                  "Radiología digitalizada",
-                  "Ergometría",
-                  "MAPA",
-                  "HOLTER",
-                  "Electrocardiografía",
-                  "Espirometría",
-                  "Electroencefalografía",
-                  "Audiometría, logoaudiometría, sisigrama, valoración del lenguaje",
-                  "Ecografías",
-                  "Ecocardiografía",
-                  "Laringoscopia, fibrolaringoscopia, rinoscopia",
-                  "Agudeza visual, fondo de ojos",
-                  "PAP, colposcopia",
-                ].map((item) => (
-                  <li key={item} className="rounded-lg border bg-card px-3 py-2 text-sm text-foreground">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </details>
-          ),
-        },
       ]}
     />
   )
