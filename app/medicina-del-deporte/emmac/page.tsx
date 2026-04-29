@@ -27,35 +27,35 @@ export default function Page() {
           title: "Tabla de exámenes complementarios obligatorios",
           content: (
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[640px] border-collapse text-sm">
+              <table className="w-full border-collapse text-xs sm:text-sm">
                 <thead>
                   <tr>
-                    <th className="border bg-secondary px-3 py-2 text-left">Edad</th>
-                    <th className="border bg-secondary px-3 py-2 text-center">Ex. Clínico</th>
-                    <th className="border bg-secondary px-3 py-2 text-center">ECG</th>
-                    <th className="border bg-secondary px-3 py-2 text-center">Laboratorio</th>
-                    <th className="border bg-secondary px-3 py-2 text-center">Ergometría</th>
+                    <th className="border bg-secondary px-2 sm:px-3 py-2 text-left">Edad</th>
+                    <th className="border bg-secondary px-1 sm:px-3 py-2 text-center whitespace-nowrap">Ex. Clínico</th>
+                    <th className="border bg-secondary px-1 sm:px-3 py-2 text-center">ECG</th>
+                    <th className="border bg-secondary px-1 sm:px-3 py-2 text-center whitespace-nowrap">Laboratorio</th>
+                    <th className="border bg-secondary px-1 sm:px-3 py-2 text-center whitespace-nowrap">Ergometría</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["Hasta 14 años", "x", "x", "", ""],
-                    ["Año que cumple 15", "x", "x", "x", ""],
-                    ["Año que cumple 16", "x", "x", "", "x"],
-                    ["Año que cumple 17", "x", "x", "x", ""],
-                    ["Año que cumple 18", "x", "x", "", ""],
-                    ["Año que cumple 19", "x", "x", "x", ""],
-                    ["Año que cumple 20", "x", "x", "", ""],
-                    ["Año que cumple 21", "x", "x", "x", ""],
-                    ["22 a 29 años", "x", "x", "x", ""],
-                    ["A partir del año que cumple 30 (todos los años)", "x", "x", "x", "x"],
+                    ["Hasta 14 años", "✓", "✓", "—", "—"],
+                    ["Año que cumple 15", "✓", "✓", "✓", "—"],
+                    ["Año que cumple 16", "✓", "✓", "—", "✓"],
+                    ["Año que cumple 17", "✓", "✓", "✓", "—"],
+                    ["Año que cumple 18", "✓", "✓", "—", "—"],
+                    ["Año que cumple 19", "✓", "✓", "✓", "—"],
+                    ["Año que cumple 20", "✓", "✓", "—", "—"],
+                    ["Año que cumple 21", "✓", "✓", "✓", "—"],
+                    ["22 a 29 años", "✓", "✓", "✓", "—"],
+                    ["Desde los 30 años (anual)", "✓", "✓", "✓", "✓"],
                   ].map((row) => (
                     <tr key={row[0]}>
-                      <td className="border px-3 py-2">{row[0]}</td>
-                      <td className="border px-3 py-2 text-center">{row[1]}</td>
-                      <td className="border px-3 py-2 text-center">{row[2]}</td>
-                      <td className="border px-3 py-2 text-center">{row[3]}</td>
-                      <td className="border px-3 py-2 text-center">{row[4]}</td>
+                      <td className="border px-2 sm:px-3 py-1.5 sm:py-2">{row[0]}</td>
+                      <td className="border px-1 sm:px-3 py-1.5 sm:py-2 text-center">{row[1]}</td>
+                      <td className="border px-1 sm:px-3 py-1.5 sm:py-2 text-center">{row[2]}</td>
+                      <td className="border px-1 sm:px-3 py-1.5 sm:py-2 text-center">{row[3]}</td>
+                      <td className="border px-1 sm:px-3 py-1.5 sm:py-2 text-center">{row[4]}</td>
                     </tr>
                   ))}
                 </tbody>
