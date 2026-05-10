@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 interface CategoryChipProps {
   title: string
   slug: string
@@ -19,8 +17,8 @@ export function CategoryChip({ title, slug, isActive = false, asSpan = false }: 
   }
 
   return (
-    <Link href={`/articulos/categoria/${slug}`} className={className}>
+    <a href="https://consultoracis.com.ar/blog" target="_blank" rel="noopener noreferrer" className={className}>
       {title}
-    </Link>
+    </a>
   )
 }
