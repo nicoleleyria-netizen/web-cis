@@ -7,6 +7,8 @@ import { PostCard } from "@/components/post-card"
 import { CTASection } from "@/components/cta-section"
 import { SectionHeader } from "@/components/section-header"
 import { HeroCarousel } from "@/components/hero-carousel"
+import { getLatestPosts } from "@/sanity/lib/fetch"
+import { urlForImage } from "@/sanity/lib/image"
 
 const services = [
   {
@@ -29,7 +31,7 @@ const services = [
   },
 ]
 
-const latestArticles = [
+const fallbackLatestArticles = [
   {
     title: "Investigación y cuidado en esclerosis sistémica: la importancia del diagnóstico temprano",
     excerpt:
@@ -71,7 +73,10 @@ const stats = [
   { value: "+1000", label: "Empresas atendidas", icon: <Users className="h-6 w-6" /> },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const latestArticles = await getLatestPosts(3)
+  const articlesToShow = latestArticles.length > 0 ? latestArticles : fallbackLatestArticles
+
   return (
     <>
       {/* Hero Section */}
@@ -157,16 +162,28 @@ export default function HomePage() {
             description="Mantente informado con nuestras publicaciones sobre salud, medicina laboral y bienestar."
           />
           <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {latestArticles.map((article) => (
-              <PostCard key={article.slug} {...article} />
-            ))}
+            {articlesToShow.map((article) => {
+              const mainImage = "mainImage" in article && article.mainImage ? urlForImage(article.mainImage)?.width(800).height(450).url() ?? undefined : undefined
+
+              return (
+                <PostCard
+                  key={article.slug}
+                  title={article.title}
+                  excerpt={article.excerpt ?? article.title}
+                  slug={article.slug}
+                  publishedAt={article.publishedAt}
+                  mainImage={mainImage}
+                  categories={article.categories ?? []}
+                />
+              )
+            })}
           </div>
           <div className="text-center">
             <Button asChild variant="outline" size="lg">
-              <Link href="/articulos">
+              <a href="https://consultoracis.com.ar/blog" target="_blank" rel="noopener noreferrer">
                 Ver todos los artículos
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

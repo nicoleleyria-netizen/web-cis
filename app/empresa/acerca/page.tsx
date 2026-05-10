@@ -86,10 +86,10 @@ export default function AcercaPage() {
       </section>
 
       <section className="py-12 lg:py-16">
-        <div className="container mx-auto px-4 lg:px-8 grid gap-8">
-          <div className="rounded-xl border bg-card p-6 lg:p-8">
-            <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-              <div>
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+            <div className="grid gap-6">
+              <div className="rounded-xl border bg-card p-6 lg:p-8">
                 <h3 className="text-2xl font-bold mb-3">Ubicación y Cobertura</h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
                   Estamos situados en Córdoba Capital y contamos con cobertura a nivel nacional e internacional.
@@ -100,15 +100,8 @@ export default function AcercaPage() {
                   experiencia y conocimientos, buscando un adecuado equilibrio entre calidad del servicio y costo.
                 </p>
               </div>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30">
-                <Image src="/images/sis-real/mapa-red-prestadores.png" alt="Cobertura de red de prestadores de Consultora CIS" fill className="object-cover" />
-              </div>
-            </div>
-          </div>
 
-          <div className="rounded-xl border bg-card p-6 lg:p-8">
-            <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-              <div>
+              <div className="rounded-xl border bg-card p-6 lg:p-8">
                 <h3 className="text-2xl font-bold mb-3">Servicio de Extremo a Extremo</h3>
                 <p className="mb-3 text-muted-foreground">Brindamos un servicio integral basado en:</p>
                 <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
@@ -118,18 +111,25 @@ export default function AcercaPage() {
                   <li>Inclusión de aspectos administrativos y logísticos</li>
                 </ul>
               </div>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-xl border bg-muted/30">
-                <Image src="/images/sis-real/mapa-red-prestadores.png" alt="Cobertura nacional y logística de servicios CIS" fill className="object-cover" />
-              </div>
+            </div>
+
+            <div className="relative min-h-[420px] overflow-hidden rounded-xl border bg-muted/30 lg:row-span-2">
+              <Image
+                src="/images/sis-real/mapa-red-prestadores.png"
+                alt="Cobertura nacional y red de prestadores de Consultora CIS"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
           <div className="rounded-xl border bg-card p-6 lg:p-8">
             <h3 className="text-2xl font-bold mb-3">Red de prestadores</h3>
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {redPrestadores.map((item) => (
-                <div key={item} className="rounded-lg border bg-secondary/30 px-3 py-2 text-sm font-medium text-foreground">
-                  {item}
+                <div key={item} className="flex items-center gap-3 rounded-xl border bg-secondary/30 px-4 py-3">
+                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary" />
+                  <span className="text-sm font-medium text-foreground">{item}</span>
                 </div>
               ))}
             </div>
