@@ -1,8 +1,12 @@
 import type { ReactNode } from "react"
+import Link from "next/link"
 import Image from "@/components/base-path-image"
+import { AreaHeroBanner } from "@/components/area-hero-banner"
 import { StudyTurnoForm } from "@/components/studies/study-turno-form"
 import { CTASection } from "@/components/cta-section"
 import { MoreServicesButton } from "@/components/studies/more-services-button"
+import { Button } from "@/components/ui/button"
+import { LatestArticlesSection } from "@/components/latest-articles-section"
 
 type Section = { title: string; content: ReactNode }
 
@@ -20,83 +24,129 @@ type Props = {
 export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, incluye = [], requisitos = [], sections = [] }: Props) {
   return (
     <>
-      <section className="bg-primary py-14">
+      <AreaHeroBanner
+        title={titulo}
+        summary={resumen}
+        heroImage={image}
+        heroAlt={imageAlt}
+        actions={[
+          {
+            text: "Solicitar Turno",
+            href: "/turnos-online",
+            className: "border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700 hover:border-emerald-700",
+          },
+          {
+            text: "Formulario de contacto",
+            href: "/contacto",
+            className: "border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50",
+          },
+        ]}
+      />
+
+      <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-3xl text-center lg:text-left">
-              <h1 className="text-3xl font-bold text-primary-foreground md:text-4xl">{titulo}</h1>
-              <p className="mt-3 text-primary-foreground/85">{resumen}</p>
-            </div>
+          <div className="mb-8 flex justify-center">
             <MoreServicesButton />
           </div>
-        </div>
-      </section>
 
-      <section className="py-10 lg:py-14">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 items-start">
-            <div className="rounded-xl border bg-card p-4 lg:p-5">
-              <h2 className="text-lg font-semibold mb-2">Descripción del servicio</h2>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                {descripcion.map((p, i) => (
-                  <p key={i}>{p}</p>
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+            <div className="rounded-2xl border bg-card p-6 lg:p-8">
+              <h2 className="text-2xl font-semibold text-foreground">Descripcion del servicio</h2>
+              <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
+                {descripcion.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
+
+              {(incluye.length > 0 || requisitos.length > 0) && (
+                <div className="mt-8 grid gap-6 md:grid-cols-2">
+                  {incluye.length > 0 && (
+                    <div className="rounded-xl border bg-background p-4">
+                      <h3 className="font-semibold mb-2">Que incluye</h3>
+                      <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                        {incluye.map((x) => (
+                          <li key={x}>{x}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {requisitos.length > 0 && (
+                    <div className="rounded-xl border bg-background p-4">
+                      <h3 className="font-semibold mb-2">Requisitos</h3>
+                      <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                        {requisitos.map((x) => (
+                          <li key={x}>{x}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
-            <div className="relative aspect-video overflow-hidden rounded-xl border">
-              <Image src={image} alt={imageAlt} fill className="object-cover" />
+            <div className="rounded-2xl border bg-secondary p-6 lg:p-8">
+              <h2 className="text-2xl font-semibold text-foreground">Contacto rapido</h2>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Si queres resolverlo rapido, podes usar alguno de estos accesos.
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Link href="/turnos-online">Solicitar Turno</Link>
+                </Button>
+                <Button asChild variant="outline" className="bg-transparent">
+                  <a href="https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web" target="_blank" rel="noopener noreferrer">
+                    WhatsApp
+                  </a>
+                </Button>
+                <Button asChild variant="secondary">
+                  <Link href="/contacto">Formulario de contacto</Link>
+                </Button>
+                <Button asChild variant="secondary">
+                  <a href="https://misaludmedica.com/Companies.html?institution=cis" target="_blank" rel="noopener noreferrer">
+                    Portal Empresa
+                  </a>
+                </Button>
+                <Button asChild variant="secondary">
+                  <a href="https://misaludmedica.com/Home.html?institution=cis" target="_blank" rel="noopener noreferrer">
+                    Portal Paciente
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
 
-          {(incluye.length > 0 || requisitos.length > 0) && (
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {incluye.length > 0 && (
-                <div className="rounded-xl border bg-card p-5">
-                  <h3 className="font-semibold mb-2">Qué incluye</h3>
-                  <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                    {incluye.map((x) => (
-                      <li key={x}>{x}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {requisitos.length > 0 && (
-                <div className="rounded-xl border bg-card p-5">
-                  <h3 className="font-semibold mb-2">Requisitos</h3>
-                  <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                    {requisitos.map((x) => (
-                      <li key={x}>{x}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
-
           {sections.length > 0 && (
-            <div className="mt-6 space-y-6">
-              {sections.map((s) => (
-                <div key={s.title} className="rounded-xl border bg-card p-5">
-                  <h3 className="font-semibold mb-3">{s.title}</h3>
-                  {s.content}
+            <div className="mt-10 grid gap-6">
+              {sections.map((section) => (
+                <div key={section.title} className="rounded-2xl border bg-card p-6 lg:p-8">
+                  <h3 className="text-xl font-semibold text-foreground">{section.title}</h3>
+                  <div className="mt-4 text-muted-foreground leading-relaxed">{section.content}</div>
                 </div>
               ))}
             </div>
           )}
 
-          <div className="mt-10">
+          <div className="mt-10 rounded-2xl border bg-card p-6 lg:p-8">
+            <h3 className="text-2xl font-semibold text-foreground mb-4">Formulario de contacto</h3>
             <StudyTurnoForm estudio={titulo} />
+          </div>
+
+          <div className="mt-10 rounded-2xl border bg-card p-4 lg:p-5">
+            <div className="relative aspect-video overflow-hidden rounded-xl border">
+              <Image src={image} alt={imageAlt} fill className="object-cover" />
+            </div>
           </div>
         </div>
       </section>
 
       <CTASection
-        title="¿Querés reservar este estudio?"
-        description="Te ayudamos a gestionar el turno de forma rápida por WhatsApp o formulario."
+        title="Queres reservar este estudio?"
+        description="Te ayudamos a gestionar el turno de forma rapida por WhatsApp o formulario."
         primaryCTA={{ text: "Pedir turno", href: "/contacto" }}
         whatsappCTA
       />
+
+      <LatestArticlesSection />
     </>
   )
 }

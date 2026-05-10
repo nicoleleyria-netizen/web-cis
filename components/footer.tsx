@@ -20,13 +20,13 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-foreground text-background">
+    <footer className="border-t border-neutral-800 bg-neutral-950 text-background">
       <div className="container mx-auto px-4 py-12 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="rounded-lg bg-black px-2 py-1">
+              <div className="rounded-lg bg-transparent px-2 py-1">
                 <Image
                   src="/images/logos/logo-cis-horizontal.png"
                   alt="Consultora CIS"

@@ -1,15 +1,10 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import Image from "@/components/base-path-image"
 import { CTASection } from "@/components/cta-section"
 import { Button } from "@/components/ui/button"
-
-export type ServiceAction = {
-  text: string
-  href: string
-  external?: boolean
-  variant?: "default" | "secondary" | "outline"
-}
+import { AreaHeroBanner, type AreaHeroAction } from "@/components/area-hero-banner"
+import { StudyTurnoForm } from "@/components/studies/study-turno-form"
+import { LatestArticlesSection } from "@/components/latest-articles-section"
 
 export type ServiceInfoPageProps = {
   title: string
@@ -21,7 +16,7 @@ export type ServiceInfoPageProps = {
     title: string
     content: ReactNode
   }>
-  actions?: ServiceAction[]
+  actions?: AreaHeroAction[]
   bottomTitle?: string
   bottomDescription?: string
 }
@@ -39,36 +34,7 @@ export function ServiceInfoPage({
 }: ServiceInfoPageProps) {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
-        <div className="absolute inset-0 opacity-20">
-          <Image src={heroImage} alt={heroAlt} fill className="object-cover" priority />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80" />
-        <div className="container relative mx-auto grid gap-8 px-4 lg:grid-cols-2 lg:px-8">
-          <div className="max-w-3xl text-center lg:text-left">
-            <h1 className="text-4xl font-bold tracking-tight text-primary-foreground md:text-5xl text-balance">{title}</h1>
-            <p className="mt-4 text-lg text-primary-foreground/85 text-pretty">{summary}</p>
-            {actions.length > 0 && (
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap justify-center lg:justify-start">
-                {actions.map((action) => (
-                  <Button key={action.text} asChild variant={action.variant ?? "secondary"} size="lg">
-                    {action.external ? (
-                      <a href={action.href} target="_blank" rel="noopener noreferrer">
-                        {action.text}
-                      </a>
-                    ) : (
-                      <Link href={action.href}>{action.text}</Link>
-                    )}
-                  </Button>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="relative min-h-[280px] overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-2xl backdrop-blur">
-            <Image src={heroImage} alt={heroAlt} fill className="object-cover" priority />
-          </div>
-        </div>
-      </section>
+      <AreaHeroBanner title={title} summary={summary} heroImage={heroImage} heroAlt={heroAlt} actions={actions} />
 
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 lg:px-8">
@@ -99,6 +65,16 @@ export function ServiceInfoPage({
                 <Button asChild variant="secondary">
                   <Link href="/contacto">Formulario de contacto</Link>
                 </Button>
+                <Button asChild variant="secondary">
+                  <a href="https://misaludmedica.com/Companies.html?institution=cis" target="_blank" rel="noopener noreferrer">
+                    Portal Empresa
+                  </a>
+                </Button>
+                <Button asChild variant="secondary">
+                  <a href="https://misaludmedica.com/Home.html?institution=cis" target="_blank" rel="noopener noreferrer">
+                    Portal Paciente
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -113,6 +89,10 @@ export function ServiceInfoPage({
               ))}
             </div>
           )}
+
+          <div className="mt-10">
+            <StudyTurnoForm estudio={title} />
+          </div>
         </div>
       </section>
 
@@ -123,6 +103,8 @@ export function ServiceInfoPage({
         secondaryCTA={{ text: "Formulario de contacto", href: "/contacto" }}
         whatsappCTA
       />
+
+      <LatestArticlesSection />
     </>
   )
 }
