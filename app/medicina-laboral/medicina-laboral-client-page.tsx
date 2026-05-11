@@ -16,72 +16,70 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AreaHeroBanner } from "@/components/area-hero-banner"
 import { LatestArticlesSection } from "@/components/latest-articles-section"
 
-type LinkCard = {
+type ServiceCardData = {
   icon: any
   title: string
-  href: string
   description: string
-}
-
-type AccordionCard = {
   id: string
-  icon: any
-  title: string
-  description: string
+  href?: string
   items: Array<{ label: string; href?: string }>
 }
 
-const linkCards: LinkCard[] = [
+const serviceCards: ServiceCardData[] = [
   {
+    id: "examen-preocupacional",
     icon: FileCheck,
     title: "Examen Preocupacional",
     href: "/medicina-laboral/examen-preocupacional",
     description: "Evaluacion medica previa al ingreso laboral para determinar la aptitud psicofisica.",
+    items: [],
   },
   {
+    id: "examen-periodico",
     icon: FileCheck,
-    title: "Examenes Complementarios Especiales",
-    href: "/medicina-laboral/examenes-complementarios-especiales",
-    description: "Estudios especificos segun riesgo laboral y perfil de puesto.",
+    title: "Examen Periodico de Aptitud",
+    description: "Evaluacion medica ocupacional periodica para seguimiento de aptitud laboral.",
+    items: [],
   },
   {
+    id: "examenes-altura",
     icon: Activity,
     title: "Examenes para trabajo en altura fisica o geografica (altitud)",
     href: "/medicina-laboral/examenes-trabajo-altura-altitud",
     description: "Aptitud medica para tareas en altura segun normativa de seguridad vigente.",
+    items: [],
   },
   {
+    id: "test-drogas",
     icon: FlaskConical,
     title: "Test de deteccion de drogas y abuso de alcohol",
     href: "/medicina-laboral/test-deteccion-drogas-abuso-alcohol",
     description: "Evaluacion toxicologica para contextos laborales que requieren controles especificos.",
+    items: [],
   },
   {
+    id: "aptitud",
     icon: FileCheck,
-    title: "Visado de Examen Preocupacional",
-    href: "/medicina-laboral/visado-examen-preocupacional",
-    description: "Validacion medica y administrativa de examenes preocupacionales.",
+    title: "Examenes Medicos de Aptitud",
+    description: "Servicios de aptitud medica laboral con estudios base y complementarios.",
+    items: [
+      { label: "Examen Preocupacional", href: "/medicina-laboral/examen-preocupacional" },
+      { label: "Examenes Complementarios Especiales", href: "/medicina-laboral/examenes-complementarios-especiales" },
+      { label: "Examenes para trabajo en altura fisica o geografica (altitud)", href: "/medicina-laboral/examenes-trabajo-altura-altitud" },
+      { label: "Chequeo medico preventivo", href: "/servicios-medicos-generales/chequeo-medico-preventivo" },
+      { label: "Examen Periodico de Aptitud" },
+      { label: "Examen Previo a una Transferencia de Actividad" },
+      { label: "Examenes psicotecnicos / Psicodiagnostico" },
+      { label: "Examen de Egreso (Post ocupacional)" },
+      { label: "Examen Posterior a una Ausencia Prolongada" },
+      { label: "Test de deteccion de drogas y abuso de alcohol", href: "/medicina-laboral/test-deteccion-drogas-abuso-alcohol" },
+    ],
   },
-  {
-    icon: Users,
-    title: "Ausentismo Diferenciado",
-    href: "/medicina-laboral/ausentismo-diferenciado",
-    description: "Seguimiento especifico de casos de ausentismo con criterio medico laboral.",
-  },
-  {
-    icon: BookOpen,
-    title: "Cursos de RCP",
-    href: "/medicina-laboral/cursos-rcp",
-    description: "Capacitaciones practicas de reanimacion para empresas e instituciones.",
-  },
-]
-
-const accordionCards: AccordionCard[] = [
   {
     id: "control-ausentismo",
     icon: Users,
     title: "Control de Ausentismo",
-    description: "Seguimiento y control del ausentismo laboral, en consultorio y domicilio.",
+    description: "Seguimiento y control del ausentismo laboral en consultorio y domicilio.",
     items: [
       { label: "Control de ausentismo en domicilio" },
       { label: "Control de ausentismo en consultorios" },
@@ -97,7 +95,7 @@ const accordionCards: AccordionCard[] = [
       { label: "Atencion primaria de empleados (atencion medica inicial)" },
       { label: "Interconsultas medicas (todas las especialidades)" },
       { label: "Rehabilitacion por patologias laborales / accidentes / enfermedades profesionales" },
-      { label: "Examenes complementarios: Audiometria, Ecografia, ECG, EEG, Ergometria, Espirometria y Laboratorio" },
+      { label: "Examenes complementarios: Audiometria, Ecografia, ECG, EEG, Ergometria, Espirometria, Fibrolaringoscopia, Laboratorio integral, Control de abuso de sustancias, Radiologia digital" },
     ],
   },
   {
@@ -109,6 +107,7 @@ const accordionCards: AccordionCard[] = [
       { label: "Servicios permanentes en planta (medico laboral, enfermeria)" },
       { label: "Examenes en planta con unidades moviles" },
       { label: "Campanas de vacunacion en planta o a domicilio" },
+      { label: "Logistica / derivacion de casos complejos" },
       { label: "Programas nutricionales corporativos" },
       { label: "Ergonomia y perfil de puesto" },
     ],
@@ -123,6 +122,7 @@ const accordionCards: AccordionCard[] = [
       { label: "Charlas de salud conforme a decreto 915/15" },
       { label: "Capacitaciones segun normas de calidad ISO 45001" },
       { label: "Cursos de RCP. Teoria y practica.", href: "/medicina-laboral/cursos-rcp" },
+      { label: "Prevencion de la salud. Patologias de mayor incidencia en la poblacion." },
     ],
   },
   {
@@ -133,33 +133,58 @@ const accordionCards: AccordionCard[] = [
     items: [
       { label: "Pericias Medicas judiciales y extrajudiciales" },
       { label: "Asesoramiento y representacion en juntas medicas" },
+      { label: "Mediacion en casos conflictivos" },
       { label: "Asesoramiento y representacion ante ART y seguros" },
-      { label: "Representacion ante Ministerio de Trabajo" },
+      { label: "Representacion Medica Laboral-Legal en Ministerio de Trabajo" },
       { label: "Valoracion de dano corporal y certificados de incapacidad" },
     ],
   },
+  {
+    id: "visado-preocupacional",
+    icon: FileCheck,
+    title: "Visado de Examen Preocupacional",
+    href: "/medicina-laboral/visado-examen-preocupacional",
+    description: "Validacion medica y administrativa de examenes preocupacionales.",
+    items: [],
+  },
 ]
 
-function CardLink({ icon: Icon, title, href, description }: LinkCard) {
-  return (
-    <Link href={href} className="block group h-full">
+function ServiceCard({ id, icon: Icon, title, href, description, items }: ServiceCardData) {
+  const hasAccordion = items.length > 0
+
+  if (href) {
+    return (
+      <Link href={href} className="block group h-full">
+        <div className="h-full flex gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md">
+          <div className="relative h-16 w-16 flex-shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <Icon className="h-7 w-7" />
+          </div>
+          <div className="min-w-0">
+            <h3 className="flex items-center gap-1 text-base font-semibold text-foreground transition-colors group-hover:text-primary">
+              {title}
+              <ChevronRight className="h-4 w-4 flex-shrink-0 text-primary/70" />
+            </h3>
+            <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+          </div>
+        </div>
+      </Link>
+    )
+  }
+
+  if (!hasAccordion) {
+    return (
       <div className="h-full flex gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:shadow-md">
         <div className="relative h-16 w-16 flex-shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
           <Icon className="h-7 w-7" />
         </div>
         <div className="min-w-0">
-          <h3 className="flex items-center gap-1 text-base font-semibold text-foreground transition-colors group-hover:text-primary">
-            {title}
-            <ChevronRight className="h-4 w-4 flex-shrink-0 text-primary/70" />
-          </h3>
+          <h3 className="text-base font-semibold text-foreground">{title}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{description}</p>
         </div>
       </div>
-    </Link>
-  )
-}
+    )
+  }
 
-function CardAccordion({ id, icon: Icon, title, description, items }: AccordionCard) {
   return (
     <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-sm">
       <div className="flex gap-4">
@@ -229,11 +254,8 @@ export default function MedicinaLaboralClientPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {linkCards.map((service) => (
-              <CardLink key={service.title} {...service} />
-            ))}
-            {accordionCards.map((service) => (
-              <CardAccordion key={service.id} {...service} />
+            {serviceCards.map((service) => (
+              <ServiceCard key={service.id} {...service} />
             ))}
           </div>
         </div>
