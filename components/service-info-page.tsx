@@ -2,7 +2,8 @@ import type { ReactNode } from "react"
 import Link from "next/link"
 import { CTASection } from "@/components/cta-section"
 import { Button } from "@/components/ui/button"
-import { AreaHeroBanner, type AreaHeroAction } from "@/components/area-hero-banner"
+import { AreaHeroAction } from "@/components/area-hero-banner"
+import { HeroService } from "@/components/hero-service"
 import { StudyTurnoForm } from "@/components/studies/study-turno-form"
 import { LatestArticlesSection } from "@/components/latest-articles-section"
 
@@ -34,7 +35,21 @@ export function ServiceInfoPage({
 }: ServiceInfoPageProps) {
   return (
     <>
-      <AreaHeroBanner title={title} summary={summary} heroImage={heroImage} heroAlt={heroAlt} actions={actions} />
+      <HeroService
+        title={title}
+        summary={summary}
+        heroImage={heroImage}
+        heroAlt={heroAlt}
+        actions={
+          actions.length > 0
+            ? actions.map((a) => ({ text: a.text, href: a.href, external: a.external, variant: a.variant ?? "default", className: a.className }))
+            : [
+                { text: "Solicitar Turno", href: "/turnos-online", variant: "default" },
+                { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "outline" },
+                { text: "Formulario de contacto", href: "/contacto", variant: "secondary" },
+              ]
+        }
+      />
 
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 lg:px-8">

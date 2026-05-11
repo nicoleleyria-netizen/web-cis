@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
 import Image from "@/components/base-path-image"
-import { AreaHeroBanner } from "@/components/area-hero-banner"
+import { HeroService } from "@/components/hero-service"
 import { StudyTurnoForm } from "@/components/studies/study-turno-form"
 import { CTASection } from "@/components/cta-section"
 import { Button } from "@/components/ui/button"
@@ -23,28 +23,15 @@ type Props = {
 export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, incluye = [], requisitos = [], sections = [] }: Props) {
   return (
     <>
-      <AreaHeroBanner
+      <HeroService
         title={titulo}
         summary={resumen}
         heroImage={image}
         heroAlt={imageAlt}
         actions={[
-          {
-            text: "Solicitar Turno",
-            href: "/turnos-online",
-            className: "border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700 hover:border-emerald-700",
-          },
-          {
-            text: "WhatsApp",
-            href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web",
-            external: true,
-            className: "border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50",
-          },
-          {
-            text: "Formulario de contacto",
-            href: "/contacto",
-            className: "border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50",
-          },
+          { text: "Solicitar Turno", href: "/turnos-online", variant: "default" },
+          { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "outline" },
+          { text: "Formulario de contacto", href: "/contacto", variant: "secondary" },
         ]}
       />
 
