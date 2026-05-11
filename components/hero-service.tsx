@@ -34,17 +34,32 @@ export function HeroService({ title, summary, heroImage, heroAlt, actions = [], 
 
               {actions.length > 0 && (
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  {actions.map((action) => (
-                    <Button key={action.text} asChild size="lg" variant={action.variant ?? "default"} className={action.className}>
-                      {action.external ? (
-                        <a href={action.href} target="_blank" rel="noopener noreferrer">
-                          {action.text}
-                        </a>
-                      ) : (
-                        <Link href={action.href}>{action.text}</Link>
-                      )}
-                    </Button>
-                  ))}
+                  {actions.map((action, idx) => {
+                    let btnClass = action.className
+                    if (!btnClass) {
+                      if (idx === 0) {
+                        // Primary: white background, teal text
+                        btnClass = "bg-white text-primary hover:bg-white/90"
+                      } else if (idx === 1) {
+                        // Secondary: transparent with white border, white text
+                        btnClass = "bg-transparent border-2 border-white text-white hover:bg-white/10"
+                      } else {
+                        // Tertiary: semi-transparent white, teal text
+                        btnClass = "bg-white/20 text-white hover:bg-white/30 border border-white/30"
+                      }
+                    }
+                    return (
+                      <Button key={action.text} asChild size="lg" variant="default" className={btnClass}>
+                        {action.external ? (
+                          <a href={action.href} target="_blank" rel="noopener noreferrer">
+                            {action.text}
+                          </a>
+                        ) : (
+                          <Link href={action.href}>{action.text}</Link>
+                        )}
+                      </Button>
+                    )
+                  })}
                 </div>
               )}
             </div>
