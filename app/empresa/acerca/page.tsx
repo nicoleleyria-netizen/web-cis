@@ -113,12 +113,12 @@ export default function AcercaPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[420px] overflow-hidden rounded-xl border bg-muted/30 lg:row-span-2">
+            <div className="relative min-h-[420px] overflow-hidden rounded-xl border bg-muted/30 p-4 lg:row-span-2">
               <Image
                 src="/images/sis-real/mapa-red-prestadores.png"
                 alt="Cobertura nacional y red de prestadores de Consultora CIS"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>
@@ -143,15 +143,15 @@ export default function AcercaPage() {
               <li>Somos creativos, flexibles y eficientes</li>
               <li>Equipo interdisciplinario con múltiples enfoques</li>
             </ul>
-            <p className="font-medium mb-2">Nuestro cliente busca una solución:</p>
-            <ul className="space-y-1">
+            <p className="font-medium mb-3">Nuestro cliente busca una solución:</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {atributos.map((a) => (
-                <li key={a} className="flex items-center gap-2 text-muted-foreground">
-                  <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-primary" />
-                  <span>{a}</span>
-                </li>
+                <div key={a} className="flex items-center gap-3 rounded-xl border bg-secondary/30 px-4 py-3">
+                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary" />
+                  <span className="text-sm font-medium text-foreground">{a}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           <div className="rounded-xl border bg-card p-6">
