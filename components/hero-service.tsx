@@ -65,7 +65,7 @@ export function HeroService({ title, summary, heroImage, heroAlt, actions = [], 
             </div>
 
             <div className="flex justify-center md:justify-end">
-              <div className="aspect-video w-full rounded-2xl border border-white/10 overflow-hidden shadow-lg md:w-96">
+              <div className="aspect-video w-full rounded-2xl border border-white/10 overflow-hidden shadow-lg md:w-[520px]">
                 <Image src={heroImage} alt={heroAlt} width={500} height={300} className="w-full h-full object-cover" />
               </div>
             </div>
