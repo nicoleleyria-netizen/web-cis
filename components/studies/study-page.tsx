@@ -18,9 +18,20 @@ type Props = {
   incluye?: string[]
   requisitos?: string[]
   sections?: Section[]
+  showBottomImage?: boolean
 }
 
-export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, incluye = [], requisitos = [], sections = [] }: Props) {
+export function StudyPage({
+  titulo,
+  resumen,
+  image,
+  imageAlt,
+  descripcion,
+  incluye = [],
+  requisitos = [],
+  sections = [],
+  showBottomImage = true,
+}: Props) {
   return (
     <>
       <HeroService
@@ -119,11 +130,13 @@ export function StudyPage({ titulo, resumen, image, imageAlt, descripcion, inclu
             <StudyTurnoForm estudio={titulo} />
           </div>
 
-          <div className="mt-10 rounded-2xl border bg-card p-4 lg:p-5">
-            <div className="relative aspect-video overflow-hidden rounded-xl border">
-              <Image src={image} alt={imageAlt} fill className="object-cover" />
+          {showBottomImage && (
+            <div className="mt-10 rounded-2xl border bg-card p-4 lg:p-5">
+              <div className="relative aspect-video overflow-hidden rounded-xl border">
+                <Image src={image} alt={imageAlt} fill className="object-cover" />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

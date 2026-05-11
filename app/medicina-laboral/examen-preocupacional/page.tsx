@@ -58,6 +58,7 @@ export default function Page() {
       resumen="Evaluación médica previa al ingreso laboral para determinar aptitud psicofísica de acuerdo con el puesto."
       image="/images/medicina-laboral/examen-preocupacional-nuevo.jpg"
       imageAlt="Examen preocupacional"
+      showBottomImage={false}
       descripcion={[
         "Toda empresa que necesite contratar una persona para cubrir un determinado puesto, antes debe solicitarle realizar un examen de ingreso o examen preocupacional.",
         "Esta evaluación tiene como objetivo determinar si el postulante es apto, según sus condiciones psicofísicas, para las tareas que se le requerirán en el trabajo.",
