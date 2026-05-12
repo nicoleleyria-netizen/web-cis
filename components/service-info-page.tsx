@@ -40,15 +40,6 @@ export function ServiceInfoPage({
         summary={summary}
         heroImage={heroImage}
         heroAlt={heroAlt}
-        actions={
-          actions.length > 0
-            ? actions.map((a) => ({ text: a.text, href: a.href, external: a.external, variant: a.variant ?? "default", className: a.className }))
-            : [
-                { text: "Solicitar Turno", href: "/turnos-online", variant: "default" },
-                { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "outline" },
-                { text: "Formulario de contacto", href: "/contacto", variant: "secondary" },
-              ]
-        }
       />
 
       <section className="py-12 lg:py-16">

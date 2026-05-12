@@ -231,15 +231,14 @@ export default function MedicinaLaboralClientPage() {
         heroAlt="Equipo medico profesional especializado en medicina laboral y salud ocupacional"
         actions={[
           {
-            text: "Hace tu consulta",
-            href: "/contacto",
-            className: "border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700 hover:border-emerald-700",
+            text: "Solicitar Turno",
+            href: "/turnos-online",
+            className: "bg-white text-primary hover:bg-white/90",
           },
           {
-            text: "Portal Empresa",
-            href: "https://misaludmedica.com/Companies.html?institution=cis",
-            external: true,
-            className: "border-indigo-600 bg-indigo-600 text-white hover:bg-indigo-700 hover:border-indigo-700",
+            text: "Más servicios",
+            href: "#nuestros-servicios",
+            className: "bg-transparent border-2 border-white text-white hover:bg-white/10",
           },
         ]}
       />

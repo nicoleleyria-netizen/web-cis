@@ -79,7 +79,7 @@ const cards: Card[] = [
     icon: ShieldCheck,
     title: "Aptitud Medica para ingresos a IPEF y otros terciarios",
     description: "Aptitud medica para ingresos con evaluacion integral y certificacion.",
-    details: [{ label: "Solicitar evaluacion desde contacto o WhatsApp" }],
+    details: [],
   },
 ]
 
@@ -113,6 +113,22 @@ function ServiceCard({ icon: Icon, title, description, href, details }: Card) {
           <p className="text-muted-foreground">{description}</p>
         </div>
       </Link>
+    )
+  }
+
+  if (!details || details.length === 0) {
+    return (
+      <div className="rounded-xl border border-border bg-card p-6">
+        <div className="flex gap-4">
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+            <Icon className="h-6 w-6" />
+          </div>
+          <div>
+            <h3 className="mb-2 text-lg font-semibold text-foreground">{title}</h3>
+            <p className="text-muted-foreground">{description}</p>
+          </div>
+        </div>
+      </div>
     )
   }
 
@@ -157,13 +173,12 @@ export default function MedicinaDelDeportePage() {
           {
             text: "Solicitar Turno",
             href: "/turnos-online",
-            className: "border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700 hover:border-emerald-700",
+            className: "bg-white text-primary hover:bg-white/90",
           },
           {
-            text: "Portal Paciente",
-            href: "https://misaludmedica.com/Home.html?institution=cis",
-            external: true,
-            className: "border-sky-600 bg-sky-600 text-white hover:bg-sky-700 hover:border-sky-700",
+            text: "Más servicios",
+            href: "#nuestros-servicios",
+            className: "bg-transparent border-2 border-white text-white hover:bg-white/10",
           },
         ]}
       />

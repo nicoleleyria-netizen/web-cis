@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import Image from "@/components/base-path-image"
 import { Button } from "@/components/ui/button"
 
@@ -21,7 +22,26 @@ type HeroServiceProps = {
   eyebrow?: string
 }
 
+function getMoreServicesHref(pathname: string) {
+  const parts = pathname.split("/").filter(Boolean)
+  if (parts.length === 0) return "/"
+
+  const root = `/${parts[0]}`
+  if (root === "/medicina-laboral" || root === "/servicios-medicos-generales" || root === "/medicina-del-deporte") {
+    return `${root}#nuestros-servicios`
+  }
+
+  return "/#nuestros-servicios"
+}
+
 export function HeroService({ title, summary, heroImage, heroAlt, actions = [], eyebrow }: HeroServiceProps) {
+  const pathname = usePathname()
+  const defaultActions: HeroServiceAction[] = [
+    { text: "Solicitar Turno", href: "/turnos-online", variant: "default" },
+    { text: "Más servicios", href: getMoreServicesHref(pathname), variant: "outline" },
+  ]
+  const visibleActions = actions.length > 0 ? actions.slice(0, 2) : defaultActions
+
   return (
     <section className="relative overflow-hidden" style={{ backgroundColor: 'var(--color-primary)' }}>
       <div className="relative">
@@ -32,9 +52,9 @@ export function HeroService({ title, summary, heroImage, heroAlt, actions = [], 
               <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{title}</h1>
               <p className="mt-4 max-w-xl text-lg text-white/90">{summary}</p>
 
-              {actions.length > 0 && (
+              {visibleActions.length > 0 && (
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  {actions.map((action, idx) => {
+                  {visibleActions.map((action, idx) => {
                     let btnClass = action.className
                     if (!btnClass) {
                       if (idx === 0) {

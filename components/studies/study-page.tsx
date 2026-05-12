@@ -39,11 +39,6 @@ export function StudyPage({
         summary={resumen}
         heroImage={image}
         heroAlt={imageAlt}
-        actions={[
-          { text: "Solicitar Turno", href: "/turnos-online", variant: "default" },
-          { text: "WhatsApp", href: "https://api.whatsapp.com/send?phone=543516820404&text=Consulta+Web", external: true, variant: "outline" },
-          { text: "Formulario de contacto", href: "/contacto", variant: "secondary" },
-        ]}
       />
 
       <section className="py-12 lg:py-16">
