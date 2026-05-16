@@ -67,6 +67,7 @@ const cards: Card[] = [
       { label: "Electrocardiografia" },
       { label: "Espirometria" },
       { label: "Audiometria" },
+      { label: "Electroencefalografia" },
     ],
   },
   {

@@ -19,6 +19,7 @@ type Props = {
   requisitos?: string[]
   sections?: Section[]
   showBottomImage?: boolean
+  ddjjLink?: { href: string; label: string }
 }
 
 export function StudyPage({
@@ -31,6 +32,7 @@ export function StudyPage({
   requisitos = [],
   sections = [],
   showBottomImage = true,
+  ddjjLink,
 }: Props) {
   return (
     <>
@@ -117,6 +119,23 @@ export function StudyPage({
                   <div className="mt-4 text-muted-foreground leading-relaxed">{section.content}</div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {ddjjLink && (
+            <div className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-foreground">Declaración Jurada Digital</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Completá tu DDJJ de manera online antes de tu turno. Es rápido y seguro.
+                </p>
+              </div>
+              <Link
+                href={ddjjLink.href}
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                {ddjjLink.label}
+              </Link>
             </div>
           )}
 

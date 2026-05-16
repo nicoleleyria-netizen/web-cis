@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "@/components/base-path-image"
 import { ArrowRight, MapPin, Users, Award } from "lucide-react"
+import { PdfModal } from "@/components/pdf-modal"
 import { Button } from "@/components/ui/button"
 import { ServiceCard } from "@/components/service-card"
 import { PostCard } from "@/components/post-card"
@@ -196,6 +197,8 @@ export default async function HomePage() {
         primaryCTA={{ text: "Trabaja con nosotros", href: "/trabaja-con-nosotros" }}
         whatsappCTA={false}
       />
+
+      <PdfModal />
     </>
   )
 }

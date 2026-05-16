@@ -20,6 +20,7 @@ export default function Page() {
       resumen="Capacitación en Reanimación Cardiopulmonar con modalidad teórica y práctica, dirigida a empresas e instituciones."
       image="/images/medicina-laboral/cursos-rcp-nuevo.jpg"
       imageAlt="Cursos de RCP"
+      showBottomImage={false}
       descripcion={[
         "Nuestros cursos de RCP brindan las herramientas necesarias para actuar correctamente ante una emergencia cardiorrespiratoria, tanto en el ámbito laboral como en la vida cotidiana.",
         "La capacitación es brindada por un equipo profesional capacitado del staff de CIS, en modalidad online o presencial según las necesidades de cada empresa.",

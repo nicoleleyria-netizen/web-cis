@@ -13,6 +13,7 @@ export default function Page() {
       resumen="Evaluación toxicológica para contextos laborales que requieren controles específicos de seguridad."
       image="/images/medicina-laboral/test-deteccion-drogas-nuevo.jpg"
       imageAlt="Test de detección de drogas y alcohol"
+      showBottomImage={false}
       descripcion={[
         "Los test de detección de drogas y/o alcohol son una herramienta importante para identificar casos de consumo en situaciones que pueden resultar riesgosas, tanto para la persona que lo consume como para terceros que pueden verse afectados.",
         "En la mayoría de los casos se utiliza este test en ámbitos de seguridad vial, en ámbitos laborales o de ingreso a un puesto laboral, o como evidencia legal.",

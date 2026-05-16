@@ -13,6 +13,7 @@ export default function Page() {
       resumen="Control médico especializado con mirada particular para casos que requieren atención diferenciada."
       image="/images/medicina-laboral/ausentismo-diferenciado-nuevo.jpg"
       imageAlt="Ausentismo diferenciado"
+      showBottomImage={false}
       descripcion={[
         "Existen casos en los que necesitamos una mirada especial a nuestro control médico, ya sea por conflictos previos, patologías complejas, historia previa de la enfermedad, entre otras.",
         "Para este tipo de caso ofrecemos un control de ausentismo diferenciado, que se realiza en consultorio, previo acuerdo de día y horario y con un médico especialista que se enfoca en el problema a resolver.",

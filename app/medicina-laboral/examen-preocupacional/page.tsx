@@ -59,6 +59,7 @@ export default function Page() {
       image="/images/medicina-laboral/examen-preocupacional-nuevo.jpg"
       imageAlt="Examen preocupacional"
       showBottomImage={false}
+      ddjjLink={{ href: "/ddjj-examen-preocupacional", label: "Completar DDJJ Preocupacional" }}
       descripcion={[
         "Toda empresa que necesite contratar una persona para cubrir un determinado puesto, antes debe solicitarle realizar un examen de ingreso o examen preocupacional.",
         "Esta evaluación tiene como objetivo determinar si el postulante es apto, según sus condiciones psicofísicas, para las tareas que se le requerirán en el trabajo.",

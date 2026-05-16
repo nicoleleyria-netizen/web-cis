@@ -22,6 +22,7 @@ export default function Page() {
       resumen="Aptitud médica para tareas en altura física o geográfica según exigencias y normativa de seguridad vigente."
       image="/images/medicina-laboral/examenes-altura-altitud-nuevo.jpg"
       imageAlt="Exámenes para trabajo en altura o altitud"
+      showBottomImage={false}
       descripcion={[
         "El trabajo en altura es una de las actividades laborales con mayor riesgo de accidentes, por lo que en Argentina su realización está regulada por normativas de seguridad e higiene.",
         "Uno de los requisitos fundamentales para desempeñar estas tareas es la realización de un examen médico laboral, el cual garantiza que el trabajador se encuentra en condiciones físicas y psicológicas adecuadas para desempeñar su labor de manera segura.",

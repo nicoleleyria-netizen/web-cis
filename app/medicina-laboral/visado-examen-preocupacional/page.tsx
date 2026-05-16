@@ -36,6 +36,7 @@ export default function Page() {
       resumen="Trámite mediante el cual quedan validadas y registradas las preexistencias de salud detectadas en el examen preocupacional."
       image="/images/medicina-laboral/visado-examen-preocupacional-nuevo.jpg"
       imageAlt="Visado de examen preocupacional"
+      showBottomImage={false}
       descripcion={[
         "El visado preocupacional es un trámite en el que queda validado y registrado las anomalías de salud que presenta una persona postulante a un determinado puesto luego de haber realizado el examen preocupacional.",
         "El visado debe ser solicitado por el empleador y dichas anomalías denominadas \"preexistencias\", por anteceder al comienzo del vínculo laboral, deben registrarse en la Superintendencia de Riesgos de Trabajo (SRT). Con este procedimiento queda determinado que el origen de la patología es previo a la incorporación del trabajador y no se la podrá atribuir a su actividad laboral.",

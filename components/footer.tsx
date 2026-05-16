@@ -171,10 +171,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-background/20 pt-8 text-center">
+        <div className="mt-8 border-t border-background/20 pt-8 text-center space-y-1">
           <p className="text-sm text-background/50">
             © {new Date().getFullYear()} Consultora CIS. Todos los derechos reservados.
           </p>
+          <a
+            href="https://fluxia.com.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-background/40 hover:text-background/70 transition-colors"
+          >
+            Desarrollado por Fluxia
+          </a>
         </div>
       </div>
     </footer>
